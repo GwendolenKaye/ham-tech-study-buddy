@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1016" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ham Tech" />
+    <title>Ham Tech Study Buddy</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1016;
+        --surface: #141c26;
+        --fg: #e7e2d6;
+        --muted: #8d948a;
+        --primary: #f0b429;
+        --ink: #1a1408;
+        --line: #2a3544;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+      }
+      main { max-width: 40rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+      p.kicker { margin: 0; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); font-size: 0.75rem; }
+      h1 { margin: 0.25rem 0 0.75rem; font-size: 1.75rem; }
+      p { line-height: 1.45; }
+      .muted { color: var(--muted); }
+      .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+      a.btn {
+        display: inline-flex;
+        min-height: 2.75rem;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0 1rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a.primary { background: var(--primary); color: var(--ink); }
+      a.ghost { border: 1px solid var(--line); color: var(--fg); background: #1c2733; }
+      ol { padding-left: 1.2rem; }
+      li { margin: 0.35rem 0; }
+      ul.sheets { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+      ul.sheets a {
+        display: block;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--fg);
+        text-decoration: none;
+        border-radius: 0.75rem;
+        padding: 0.75rem 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Technician</p>
+      <h1>Ham Tech Study Buddy</h1>
+      <p class="muted">
+        This is the copy that lives on the open web, so your phone can save it and print it. The chat preview cannot.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="sheets/packet.html">Open the print packet</a>
+        <a class="btn ghost" href="sheets/ham-tech-cheat-sheets.pdf">Open the PDF</a>
+      </div>
+      <h2>Put it on your home screen</h2>
+      <ol>
+        <li>iPhone: Safari, Share, Add to Home Screen.</li>
+        <li>Android: Chrome menu, Install app or Add to Home screen.</li>
+        <li>Open the print packet, then use the phone’s share button and choose Print.</li>
+      </ol>
+      <h2>Sheets</h2>
+      <ul class="sheets">
+        <li><a href="sheets/formulas.png">Formulas</a></li>
+        <li><a href="sheets/electrical.png">Electrical ideas</a></li>
+        <li><a href="sheets/rules.png">Rules and frequencies</a></li>
+        <li><a href="sheets/operating.png">Operating</a></li>
+        <li><a href="sheets/propagation.png">Propagation</a></li>
+        <li><a href="sheets/station.png">Station</a></li>
+        <li><a href="sheets/parts.png">Parts and symbols</a></li>
+        <li><a href="sheets/gear.png">Gear</a></li>
+        <li><a href="sheets/modes.png">Modes and satellites</a></li>
+        <li><a href="sheets/antennas.png">Antennas</a></li>
+        <li><a href="sheets/safety.png">Safety</a></li>
+      </ul>
+    </main>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").catch(() => {});
+      }
+    </script>
+  </body>
+</html>
