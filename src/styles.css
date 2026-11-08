@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b1016;
+  --color-surface: #141c26;
+  --color-raised: #1c2733;
+  --color-fg: #e7e2d6;
+  --color-muted: #8d948a;
+  --color-primary: #f0b429;
+  --color-ink: #1a1408;
+  --color-line: #2a3544;
+  --color-good: #7dba8a;
+  --color-bad: #d4786a;
+  --color-paper: #fbf8f2;
+  --color-wash: #f4e4bc;
+  --color-wash2: #d7ebe6;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--color-primary);
+    height: 2.75rem;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: white !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+}
+
+@keyframes ride {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.flow-dot {
+  offset-rotate: 0deg;
+  animation-name: ride;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flow-water {
+  offset-path: path("M168 150 H560");
+}
+
+.flow-wire {
+  offset-path: path("M84 45 H540");
+}
+
+.flow-dc {
+  offset-path: path("M24 40 H230");
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(72px);
+  }
+}
+
+.electron {
+  animation: drift 1.6s linear infinite;
+}
+
+@keyframes wave-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120px);
+  }
+}
+
+.wave-track {
+  animation: wave-slide 2.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot,
+  .electron,
+  .wave-track {
+    animation: none !important;
+  }
+}

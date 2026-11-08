@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ham Tech cheat sheets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page { size: letter; margin: 0; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: #d9d3c7; }
+      body { font-family: "IBM Plex Sans", sans-serif; color: #1c1914; }
+      .page {
+        width: 8.5in;
+        height: 11in;
+        padding: 0.32in 0.36in 0.28in;
+        background: #fbf8f2;
+        overflow: hidden;
+        page-break-after: always;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .page:last-child { page-break-after: auto; }
+      header.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; border-bottom: 2px solid #1c1914; padding-bottom: 4px; }
+      .kicker { margin: 0; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+      h1 { margin: 0; font-size: 18px; letter-spacing: -0.02em; line-height: 1.1; }
+      .how { margin: 0; max-width: 3.3in; text-align: right; font-size: 10px; line-height: 1.3; }
+      .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+      .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+      .box { border: 1px solid #1c1914; padding: 5px 7px 6px; background: #fff; }
+      .box.wash { background: #f4e4bc; }
+      .box.wash2 { background: #d7ebe6; }
+      h2 { margin: 0 0 3px; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+      p, li { margin: 0; font-size: 10.5px; line-height: 1.28; }
+      ul { margin: 0; padding-left: 14px; }
+      li + li { margin-top: 1px; }
+      table { width: 100%; border-collapse: collapse; font-size: 10px; }
+      th, td { border: 1px solid #1c1914; padding: 2px 4px; text-align: left; vertical-align: top; }
+      th { background: #1c1914; color: #fbf8f2; font-weight: 600; }
+      .mono { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 11px; }
+      footer.foot { margin-top: auto; border-top: 1px solid #1c1914; padding-top: 3px; font-size: 9px; display: flex; justify-content: space-between; }
+      .triwrap { display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center; }
+      .triwrap p { font-size: 10px; }
+      svg.tri { width: 100%; height: 78px; }
+      .sym { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+      .sym figure { margin: 0; border: 1px solid #1c1914; background: #fff; text-align: center; padding: 3px 2px 4px; }
+      .sym svg { width: 100%; height: 36px; }
+      .sym figcaption { font-size: 9px; font-weight: 600; line-height: 1.15; }
+      strong { font-weight: 650; }
+    </style>
+  </head>
+  <body>
+    <section class="page" id="formulas">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · formulas</p>
+          <h1>Cover the circled letter</h1>
+        </div>
+        <p class="how">Side by side means multiply. One over the other means divide. E volts, I amps, R ohms, P watts.</p>
+      </header>
+      <div class="box wash">
+        <h2>Ohm’s law</h2>
+        <div class="triwrap">
+          <div><p>Voltage</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="70" cy="43" r="13" fill="#f4e4bc" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">E</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">I</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">R</text></svg><p class="mono">E = I × R</p></div>
+          <div><p>Current</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="50" cy="91" r="13" fill="#f4e4bc" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">E</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">I</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">R</text></svg><p class="mono">I = E / R</p></div>
+          <div><p>Resistance</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="90" cy="91" r="13" fill="#f4e4bc" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">E</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">I</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">R</text></svg><p class="mono">R = E / I</p></div>
+        </div>
+        <p>Book example: 90 volts and 3 amps. Cover R. 90 / 3 = <strong>30 ohms</strong>. 12 volts across 4 ohms is 3 amps.</p>
+      </div>
+      <div class="box wash2">
+        <h2>Power</h2>
+        <div class="triwrap">
+          <div><p>Power</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="70" cy="43" r="13" fill="#d7ebe6" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">P</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">E</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">I</text></svg><p class="mono">P = E × I</p></div>
+          <div><p>Voltage</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="50" cy="91" r="13" fill="#d7ebe6" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">P</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">E</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">I</text></svg><p class="mono">E = P / I</p></div>
+          <div><p>Current</p><svg class="tri" viewBox="0 0 140 118"><polygon points="70,4 6,114 134,114" fill="none" stroke="#1c1914" stroke-width="2"/><line x1="31" y1="68" x2="109" y2="68" stroke="#1c1914"/><line x1="70" y1="68" x2="70" y2="114" stroke="#1c1914"/><circle cx="90" cy="91" r="13" fill="#d7ebe6" stroke="#1c1914" stroke-width="2"/><text x="70" y="49" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">P</text><text x="50" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans">E</text><text x="90" y="98" text-anchor="middle" font-size="18" font-family="IBM Plex Sans" font-weight="700">I</text></svg><p class="mono">I = P / E</p></div>
+        </div>
+        <p>13.8 V × 10 A = <strong>138 W</strong>. 12 V × 2.5 A = 30 W. 120 W at 12 V is 10 A.</p>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Power wheel · I squared</h2>
+          <p class="mono">P = I² × R</p>
+          <p class="mono">I = √(P / R)</p>
+          <p class="mono">R = P / I²</p>
+          <p>If the cell says I², divide first, then take the square root to get amps.</p>
+        </div>
+        <div class="box">
+          <h2>Power wheel · E squared</h2>
+          <p class="mono">E = √(P × R)</p>
+          <p class="mono">P = E² / R</p>
+          <p class="mono">R = E² / P</p>
+          <p>E² is on top because E² = P × R. Square root that to get volts.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Prefixes · each step is ×1,000</h2>
+        <p>pico, nano, micro, milli, the unit, kilo, mega, giga.</p>
+        <p>1.5 A = 1,500 mA. 28,400 kHz = 28.4 MHz. 500 mW = 0.5 W. Write MHz and kHz, not just “mega.”</p>
+        <p><strong>Decibels.</strong> Twice the power is about +3 dB. Ten times is +10 dB. Down to a quarter is about −6 dB.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>1 · Formulas</span></footer>
+    </section>
+
+    <section class="page" id="electrical">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T5</p>
+          <h1>Electrical ideas</h1>
+        </div>
+        <p class="how">Voltage is push. Current is flow. Resistance is the squeeze. Power is push times flow.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>The names</h2>
+          <ul>
+            <li><strong>E</strong> voltage, volts. Also called EMF.</li>
+            <li><strong>I</strong> current, amperes. Electrons moving.</li>
+            <li><strong>R</strong> resistance, ohms. Opposes current.</li>
+            <li><strong>P</strong> power, watts. The work being done.</li>
+            <li><strong>Hz</strong> frequency, cycles each second.</li>
+            <li><strong>F</strong> capacitance, farads. Stores energy in an electric field.</li>
+            <li><strong>H</strong> inductance, henries. Stores energy in a magnetic field.</li>
+            <li><strong>Z</strong> impedance, ohms. The squeeze against AC.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Conductors and insulators</h2>
+          <p><strong>Conductors</strong> let current flow: copper, aluminum, gold, silver, most metals, salt water.</p>
+          <p><strong>Insulators</strong> block it: glass, rubber, ceramic, plastic, dry air, wood.</p>
+          <p>A wire is a conductor wrapped in an insulator. A short is almost no resistance. An open is a broken path, so current stops.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="box wash2">
+          <h2>DC and AC</h2>
+          <p><strong>DC</strong> current flows one way. A battery is DC. The trace is a flat line.</p>
+          <p><strong>AC</strong> current reverses over and over. A wall outlet and a radio wave are AC. The trace is a wave.</p>
+          <p>Frequency is how many full cycles happen in one second. 60 Hz reverses 60 times a second. A 146 MHz signal does it 146 million times a second.</p>
+        </div>
+        <div class="box">
+          <h2>Series and parallel</h2>
+          <p><strong>Series:</strong> one path. Current is the same everywhere. Voltages add. Resistances add.</p>
+          <p><strong>Parallel:</strong> branches. Voltage is the same across each branch. Currents add. Total resistance is less than the smallest resistor.</p>
+          <p>Two equal resistors in parallel equal half of one of them.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>How you measure</h2>
+        <p>A <strong>voltmeter</strong> goes across the part, in parallel. An <strong>ammeter</strong> goes in the path, in series. An <strong>ohmmeter</strong> is used with the power off. A multimeter does all three. Never measure ohms on a live circuit.</p>
+      </div>
+      <div class="box">
+        <h2>Three more words that show up together</h2>
+        <p>A <strong>capacitor</strong> passes AC and blocks DC. An <strong>inductor</strong> (a coil) passes DC and fights a change in current. <strong>Impedance</strong> is the total opposition to AC: resistance plus the effect of capacitors and coils. It is still measured in ohms.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>2 · Electrical ideas</span></footer>
+    </section>
+
+    <section class="page" id="rules">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T1</p>
+          <h1>Rules and where you may transmit</h1>
+        </div>
+        <p class="how">The FCC makes the rules. A band plan is only a gentleman’s agreement. If they disagree, follow the FCC.</p>
+      </header>
+      <div class="box">
+        <h2>Your license</h2>
+        <p>Element 2 is the Technician test: 35 questions, 26 to pass. Three Volunteer Examiners give the test. The license lasts <strong>10 years</strong>. You have a 2-year grace period to renew, but you may not transmit until it is renewed. You may operate when your call sign appears in the FCC database, not before. The control operator’s license sets the privileges. The station owner is still responsible. Say your call sign every <strong>10 minutes</strong> and at the end of the contact.</p>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Band</th><th>Frequencies</th><th>What a Technician may do</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>80 m</td><td>3.525–3.600 MHz</td><td>CW only, 200 watts</td></tr>
+          <tr><td>40 m</td><td>7.025–7.125 MHz</td><td>CW only, 200 watts</td></tr>
+          <tr><td>15 m</td><td>21.025–21.200 MHz</td><td>CW only, 200 watts</td></tr>
+          <tr><td>10 m</td><td>28.000–28.300 MHz</td><td>CW and data, 200 watts</td></tr>
+          <tr><td>10 m</td><td>28.300–28.500 MHz</td><td>Phone and CW, 200 watts. Your only HF voice.</td></tr>
+          <tr><td>6 m</td><td>50–54 MHz</td><td>CW only 50.0–50.1. All modes above that. Up to 1500 W.</td></tr>
+          <tr><td>2 m</td><td>144–148 MHz</td><td>All modes, up to 1500 W</td></tr>
+          <tr><td>1.25 m</td><td>222–225 MHz</td><td>All modes, up to 1500 W</td></tr>
+          <tr><td>70 cm</td><td>420–450 MHz</td><td>All modes. Amateurs are secondary here.</td></tr>
+          <tr><td>33 cm / 23 cm</td><td>902–928 and 1240–1300 MHz</td><td>All modes</td></tr>
+        </tbody>
+      </table>
+      <div class="cols">
+        <div class="box wash">
+          <h2>Not your bands</h2>
+          <p>20, 17, 12, and 60 meters are not Technician bands. Neither is most of 80, 40, 15, and 10. Above 30 MHz the power cap is 1500 watts, except a few special slices. Always use the <strong>least power that makes the contact</strong>.</p>
+        </div>
+        <div class="box wash2">
+          <h2>Do not transmit</h2>
+          <ul>
+            <li>Music, broadcasting, obscenity, or false calls.</li>
+            <li>Hidden messages. Codes are allowed only to control a satellite.</li>
+            <li>Anything for your job or for pay.</li>
+            <li>When you would interfere with a primary user. Stop.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box">
+        <h2>People on the air</h2>
+        <p>The <strong>control operator</strong> is the licensed ham responsible at the control point. A non-ham may speak only as third-party traffic, with you there to ID. Third-party messages to other countries are allowed only where the US has an agreement. One-way transmissions are allowed for beacons, code practice, emergency traffic, and bulletins aimed at other hams. That is not broadcasting.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>3 · Rules</span></footer>
+    </section>
+
+    <section class="page" id="operating">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T2</p>
+          <h1>Operating</h1>
+        </div>
+        <p class="how">Listen first. Leave a pause so someone else can break in. Say your call sign.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>Repeater</h2>
+          <p>A repeater listens on one frequency and transmits on another, from a high place, so handhelds can reach each other.</p>
+          <p>You listen on the output. You transmit on the input. The split is the <strong>offset</strong>: usually <strong>600 kHz</strong> on 2 meters and <strong>5 MHz</strong> on 70 cm.</p>
+          <p>A <strong>CTCSS</strong> tone (you usually cannot hear it) opens the repeater. A courtesy tone means the machine has dropped, so you may talk. Don’t “kerchunk” just to hear it.</p>
+        </div>
+        <div class="box wash2">
+          <h2>Simplex</h2>
+          <p>Simplex means both people use the same frequency. Use it when you can hear each other without the repeater, so the repeater stays free.</p>
+          <p><strong>146.520 MHz</strong> is the 2 meter FM calling frequency.</p>
+          <p><strong>446.000 MHz</strong> is the 70 cm FM calling frequency.</p>
+          <p><strong>144.390 MHz</strong> is the US APRS frequency.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>A contact</h2>
+          <ul>
+            <li>Calling anyone: “CQ”. On a repeater, just say your call sign.</li>
+            <li>Use phonetics. Alpha, Bravo, Charlie…</li>
+            <li>On a directed net, talk when net control asks.</li>
+            <li>Emergency: stop, listen, help only if you can. Say “emergency.”</li>
+            <li>RST report for Morse: readability 1–5, strength 1–9, tone 1–9. A good signal is 599.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Q signals</h2>
+          <ul>
+            <li><strong>QRM</strong> man-made interference</li>
+            <li><strong>QRN</strong> static, natural noise</li>
+            <li><strong>QSY</strong> change frequency</li>
+            <li><strong>QTH</strong> location</li>
+            <li><strong>QRZ</strong> who is calling me</li>
+            <li><strong>QSB</strong> fading</li>
+            <li><strong>QSL</strong> I confirm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Which band is that frequency?</h2>
+        <p>3.5 MHz is 80 m. 7 MHz is 40 m. 21 MHz is 15 m. 28 MHz is 10 m. 52 MHz is 6 m. 146 MHz is 2 m. 223 MHz is 1.25 m. 443 or 446 MHz is 70 cm. 1296 MHz is 23 cm. Wavelength in meters is about <span class="mono">300 / MHz</span>. A 146 MHz signal is about 2 meters long.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>4 · Operating</span></footer>
+    </section>
+
+    <section class="page" id="propagation">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T3</p>
+          <h1>How a radio signal travels</h1>
+        </div>
+        <p class="how">Radio waves move at the speed of light. Wavelength in meters = 300 ÷ frequency in MHz.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>HF can skip</h2>
+          <p>HF is 3–30 MHz. Those waves can bounce off the ionosphere and reach other countries. More sunspots, better HF, especially 10 and 15 meters.</p>
+          <p>The <strong>F layer</strong> is the mirror for long-distance skip. The <strong>D layer</strong> appears in the daytime and soaks up lower HF, so 80 meters is better at night.</p>
+        </div>
+        <div class="box wash2">
+          <h2>VHF and UHF are local</h2>
+          <p>Above 30 MHz the ionosphere usually lets the wave go out into space. Range is a bit past the visual horizon, because the air bends the wave slightly.</p>
+          <p>Buildings and leaves soak up UHF more than VHF. A handheld inside a car or a building is weaker.</p>
+        </div>
+      </div>
+      <div class="cols3">
+        <div class="box">
+          <h2>Sporadic E</h2>
+          <p>A sudden patch in the E layer. Surprise long contacts on 6 meters and 10 meters. 6 meters is called the magic band for this.</p>
+        </div>
+        <div class="box">
+          <h2>Tropo ducting</h2>
+          <p>A weather layer bends VHF and UHF and carries them hundreds of miles. Common over water and in a temperature inversion.</p>
+        </div>
+        <div class="box">
+          <h2>Knife-edge</h2>
+          <p>A sharp ridge bends some of the wave down into the valley on the far side. That is how a mountain does not always block you.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Picket fencing</h2>
+          <p>A mobile signal flutters. The wave arrived by more than one path, and the copies add and cancel as you drive. That is multipath.</p>
+        </div>
+        <div class="box">
+          <h2>Polarization</h2>
+          <p>Hold the antenna the same way as the station you want. Most FM and repeaters are vertical. A horizontal dipole is horizontal. A mismatch can cost a lot of signal.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Examples</h2>
+        <p>300 / 146 ≈ 2 m, so 146 MHz is the 2 meter band. 300 / 50 = 6 m. 300 / 440 ≈ 0.7 m, which is 70 cm. A longer wavelength is a lower frequency.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>5 · Propagation</span></footer>
+    </section>
+
+    <section class="page" id="station">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T4</p>
+          <h1>The station</h1>
+        </div>
+        <p class="how">A bad match sends power back down the cable. Fix the antenna. Don’t just turn the radio up.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>SWR</h2>
+          <p><strong>1:1</strong> means the antenna and the cable agree. Power goes out. A high SWR means some power bounces back. Causes: wrong length, broken wire, bad connector, antenna against metal, water in the coax.</p>
+          <p>Under about 2:1 is usually fine. A very high SWR can damage the radio. Many radios fold back the power to protect themselves.</p>
+        </div>
+        <div class="box wash2">
+          <h2>Tuner and dummy load</h2>
+          <p>An <strong>antenna tuner</strong> makes the radio see a match. It does not make a poor antenna radiate better. It protects the radio.</p>
+          <p>A <strong>dummy load</strong> is a shielded resistor that acts like an antenna and turns the power into heat. Use it to test the radio without putting a signal on the air.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Feed line</h2>
+          <p>Radios want about <strong>50 ohm</strong> coax. Loss grows with frequency and with length. At UHF, use a short run of good coax. Seal outdoor connectors so water cannot wick in. Ladder line is low loss but must stay clear of metal.</p>
+        </div>
+        <div class="box">
+          <h2>Meters</h2>
+          <p>Voltmeter in parallel. Ammeter in series. Ohmmeter with power off and the part out of the circuit if you can. An S meter shows relative received strength, not watts.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>RF in the shack, and exposure</h2>
+        <p>A ferrite choke on the coax stops RF from coming back into the mic and the computer. A low-pass filter after the transmitter cuts harmonics. Exposure depends on power, duty cycle, frequency, antenna gain, and distance. FM and digital are high duty cycle because the carrier stays on. SSB is lower. If you are over the limit: lower the power, raise or move the antenna, or transmit less.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>6 · Station</span></footer>
+    </section>
+
+    <section class="page" id="parts">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T6</p>
+          <h1>Parts and the symbols</h1>
+        </div>
+        <p class="how">The test shows a symbol and asks its name. Learn the pictures, not just the words.</p>
+      </header>
+      <div class="sym">
+        <figure><svg viewBox="0 0 80 36"><path d="M4 18 H18 l6-10 8 20 8-20 8 20 6-10 H76" fill="none" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Resistor</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M8 18 H30 M50 18 H72 M30 8 V28 M50 8 V28" fill="none" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Capacitor</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M8 18 H28 M52 18 H72 M40 8 q12 10 0 20" fill="none" stroke="#1c1914" stroke-width="2"/><path d="M28 8 V28" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Coil / inductor</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M6 18 H26 L44 8 V28 Z M44 8 V28 M48 18 H74" fill="none" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Diode · bar is the cathode</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M4 18 H22 L40 8 V28 Z M40 8 V28 M44 12 l16-6 M44 24 l16 6" fill="none" stroke="#1c1914" stroke-width="2"/><path d="M56 4 l4 4 -6 2" fill="#1c1914"/></svg><figcaption>LED · light comes out</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M40 4 V32 M22 10 L40 18 L22 26 M22 26 l4-1 -1-5" fill="none" stroke="#1c1914" stroke-width="2"/><path d="M22 26 l6-2 1 5 z" fill="#1c1914"/></svg><figcaption>NPN transistor · arrow out</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M40 18 H70 M40 18 V8 M28 28 H52 M22 23 H58 M16 18 H64" fill="none" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Ground</figcaption></figure>
+        <figure><svg viewBox="0 0 80 36"><path d="M40 32 V14 M28 14 H52 L40 2 Z" fill="none" stroke="#1c1914" stroke-width="2"/></svg><figcaption>Antenna</figcaption></figure>
+      </div>
+      <div class="cols">
+        <div class="box wash">
+          <h2>What they do</h2>
+          <ul>
+            <li><strong>Resistor</strong> sets current. A potentiometer is an adjustable one.</li>
+            <li><strong>Capacitor</strong> stores energy in an electric field. Blocks DC, passes AC.</li>
+            <li><strong>Inductor</strong> stores energy in a magnetic field. A coil.</li>
+            <li><strong>Diode</strong> lets current one way. The bar is the cathode.</li>
+            <li><strong>LED</strong> a diode that lights. Still one way.</li>
+            <li><strong>Transistor</strong> a switch or an amplifier. NPN arrow points out.</li>
+            <li><strong>Transformer</strong> two coils. Changes voltage. No DC path between sides.</li>
+            <li><strong>Fuse</strong> opens when current is too high. Put it in the hot lead.</li>
+            <li><strong>Relay</strong> a switch pulled in by a coil.</li>
+            <li><strong>Battery</strong> a stack of cells. Long line is positive.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Reading a schematic</h2>
+          <p>Lines are wires. A dot is a connection. A jump with no dot is not a connection. Ground symbols are the common return, not always the dirt outside.</p>
+          <p>A switch in series turns the whole circuit off. A fuse goes in series too. A capacitor from a signal line to ground shorts AC noise to ground and leaves DC.</p>
+          <p>An integrated circuit is a tiny circuit in one package. You treat it as one part with numbered pins.</p>
+          <p>Gain means a bigger signal out than in. A transistor or an IC can provide it.</p>
+        </div>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>7 · Parts</span></footer>
+    </section>
+
+    <section class="page" id="gear">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T7</p>
+          <h1>Gear and fixing problems</h1>
+        </div>
+        <p class="how">If it fails on every band, suspect the radio or the power. If it fails on one antenna, suspect that antenna.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>What a receiver is doing</h2>
+          <p><strong>Sensitivity</strong> is hearing a weak signal. <strong>Selectivity</strong> is ignoring the ones next to it.</p>
+          <p>A mixer plus an oscillator make an intermediate frequency. That is a superheterodyne.</p>
+          <p>SSB is heard with a product detector. CW needs a beat oscillator so the tone is audible. FM uses a discriminator.</p>
+        </div>
+        <div class="box wash2">
+          <h2>Knobs that matter</h2>
+          <ul>
+            <li><strong>Squelch</strong> mutes the noise until a signal appears. Too high and you miss weak stations.</li>
+            <li><strong>AGC</strong> evens out loud and quiet signals.</li>
+            <li><strong>Noise blanker</strong> cuts pulse noise, like ignition.</li>
+            <li><strong>Mic gain</strong> too high makes a wide, distorted signal.</li>
+            <li>Attenuator or “ATT” tames a too-strong signal.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Interference</h2>
+        <p><strong>Harmonic:</strong> your transmitter also makes 2× and 3× the frequency. A low-pass filter at the transmitter reduces them. <strong>Overload:</strong> a strong station on its real frequency overwhelms a nearby receiver, like a TV or a phone. Fix that at the receiver: move the antenna, add a filter, or lower your power. Ferrite on the cables often stops RF getting into speakers and computers.</p>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Quick checks</h2>
+          <ul>
+            <li>No power: supply, fuse, power cord, battery.</li>
+            <li>High SWR: coax, connector, antenna, water in the line.</li>
+            <li>Repeater won’t answer: wrong offset, wrong tone, or you are on the output.</li>
+            <li>Hear nothing: squelch, volume, tone, or the antenna is off.</li>
+            <li>Distorted FM: mic gain, or you are off frequency.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Digital hookup</h2>
+          <p>Most digital modes use a computer sound card or a small USB interface. The radio is on SSB for weak-signal modes and on FM for packet at VHF. Too much audio into the radio splashes across the band. Turn it down until the ALC just starts to move.</p>
+        </div>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>8 · Gear</span></footer>
+    </section>
+
+    <section class="page" id="modes">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T8</p>
+          <h1>Modes and satellites</h1>
+        </div>
+        <p class="how">Use the narrowest mode that does the job. Bandwidth is how much spectrum you occupy.</p>
+      </header>
+      <table>
+        <thead><tr><th>Mode</th><th>About how wide</th><th>Remember</th></tr></thead>
+        <tbody>
+          <tr><td>CW, Morse</td><td>150 Hz</td><td>On and off. Goes farthest for the power.</td></tr>
+          <tr><td>SSB voice</td><td>3 kHz</td><td>LSB below 10 MHz. USB above 10 MHz, including 10 meters.</td></tr>
+          <tr><td>AM voice</td><td>6 kHz</td><td>SSB is one side of an AM signal, and more efficient.</td></tr>
+          <tr><td>FM voice</td><td>10–15 kHz</td><td>The usual VHF/UHF mode. The stronger signal wins completely.</td></tr>
+          <tr><td>FT8, PSK31</td><td>very narrow</td><td>Weak-signal digital. Computer does the decoding.</td></tr>
+        </tbody>
+      </table>
+      <div class="cols">
+        <div class="box wash">
+          <h2>Digital you will see</h2>
+          <ul>
+            <li><strong>Packet</strong> digital messages, like a radio bulletin board.</li>
+            <li><strong>APRS</strong> position and short messages. 144.390 MHz in the US.</li>
+            <li><strong>DMR, D-STAR, Fusion</strong> digital voice. You need the right mode and often a talkgroup or room.</li>
+            <li><strong>EchoLink and IRLP</strong> tie radios together over the internet. Still identify. Still follow third-party rules.</li>
+            <li>Slow-scan TV fits in a phone-width signal. Fast-scan TV is wide and lives on UHF.</li>
+          </ul>
+        </div>
+        <div class="box wash2">
+          <h2>Satellites</h2>
+          <p>Most amateur satellites are low orbit. You can hear one for only a few minutes.</p>
+          <p><strong>Uplink</strong> is you to the satellite. <strong>Downlink</strong> is the satellite to you. A <strong>beacon</strong> is its automatic ID.</p>
+          <p><strong>Doppler:</strong> the frequency slides as the satellite moves. You retune. Use the published band plan. Don’t use a satellite uplink as a local chat channel.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Tones</h2>
+        <p><strong>CTCSS</strong> is a steady low tone that opens a repeater. You normally do not hear it. <strong>DCS</strong> is the digital version. <strong>DTMF</strong> is the keypad beeps, used to control a phone patch or a link. If the repeater is quiet and you are on the right frequency, the missing piece is usually the tone.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>9 · Modes</span></footer>
+    </section>
+
+    <section class="page" id="antennas">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T9</p>
+          <h1>Antennas and feed lines</h1>
+        </div>
+        <p class="how">A half-wave dipole in feet is about 468 ÷ MHz. A quarter-wave vertical is about 234 ÷ MHz.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>Dipole</h2>
+          <p>Two equal wires, fed in the middle, about a half wavelength long. It radiates broadside, weakly off the ends. Hung flat, it is horizontally polarized.</p>
+          <p>Example: 468 / 146 ≈ 3.2 feet for a 2 meter dipole. Each side is half of that.</p>
+        </div>
+        <div class="box wash2">
+          <h2>Vertical</h2>
+          <p>A quarter-wave whip needs the other half: radials, or the metal body of a car. It radiates equally around the compass. Vertical polarization, which matches most FM repeaters.</p>
+          <p>A rubber duck is a short, lossy vertical. Fine up close. Poor at a distance.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Yagi, a beam</h2>
+          <p>One driven element, a reflector behind it, directors in front. Gain goes forward. The sides and back are quiet. Use it to reach a far repeater, work a satellite, or find a hidden transmitter. More elements, tighter beam, more gain. Gain does not create power. It aims the power you already have.</p>
+        </div>
+        <div class="box">
+          <h2>Feed line</h2>
+          <p>50 ohm coax is the normal cable. Loss rises with frequency, length, and cheap cable. Keep UHF runs short. PL-259 is the large HF plug. Handhelds use SMA or BNC. N connectors are better at UHF. Seal outdoor joints. Ladder line loses less but cannot be taped to a metal mast.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Match, direction, safety</h2>
+        <p>SWR tells you the match, not whether the antenna is a good radiator. A tuner at the radio protects the radio. Polarization should match the other station. To fox-hunt, use a beam or your body as a shield and walk toward the stronger signal. Never put a wire where it could fall into a power line.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy</span><span>10 · Antennas</span></footer>
+    </section>
+
+    <section class="page" id="safety">
+      <header class="top">
+        <div>
+          <p class="kicker">Technician · T0</p>
+          <h1>Safety</h1>
+        </div>
+        <p class="how">Power lines, RF exposure, and charged capacitors cause the real injuries. Slow down around all three.</p>
+      </header>
+      <div class="cols">
+        <div class="box wash">
+          <h2>Power lines</h2>
+          <p>Look up before you put up any mast. Assume every line is live. If an antenna or ladder could touch a line if it fell, it is too close. If a line is on your antenna, stay away and call the power company. Do not try to pull it off.</p>
+        </div>
+        <div class="box wash2">
+          <h2>In the shack</h2>
+          <p>Keep the third prong on the plug. It is the safety ground. Don’t replace a fuse with a bigger one. A capacitor in a power supply can shock you after the radio is unplugged. Discharge it. A shorted car battery or a ring across the terminals can burn you badly.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>RF exposure</h2>
+        <p>The things that raise exposure: more power, more duty cycle, more antenna gain, closer to people, and some frequencies more than others. Controlled means you and your household, who know the station is there. Uncontrolled means a neighbor. FM, digital, and RTTY are high duty cycle. SSB is lower because you are not transmitting full power the whole time. If the evaluation says you are over the limit, reduce power, move the antenna higher or farther, or transmit less. The rule is to evaluate, not to guess.</p>
+      </div>
+      <div class="cols">
+        <div class="box">
+          <h2>Lightning and ground</h2>
+          <p>Disconnect outside antennas before a storm. Bond the radio, tuner, and antenna entry to a common ground, and bond that to the electrical service ground. A ground rod alone, not bonded, is not enough. Do not operate while a storm is on top of you.</p>
+        </div>
+        <div class="box">
+          <h2>Towers and batteries</h2>
+          <p>Climbing means a harness, a hard hat, and a helper. Don’t climb alone. A lead-acid battery gives off hydrogen while charging. Ventilate it, and keep sparks away. A crank-up tower must be all the way down before anyone climbs it.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>If someone is shocked</h2>
+        <p>Do not touch them while they are on the circuit. Turn the power off or knock the wire away with something dry and nonmetal. Then call for help. For an electrical fire, kill the power and use an extinguisher rated for electrical fires, not water.</p>
+      </div>
+      <footer class="foot"><span>Ham Tech Study Buddy · print the whole packet</span><span>11 · Safety</span></footer>
+    </section>
+  </body>
+</html>
