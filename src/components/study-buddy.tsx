@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Activity,
+  BookOpen,
   Droplets,
   Gauge,
   ListChecks,
@@ -10,6 +11,7 @@ import {
   Waves,
   Zap,
 } from "lucide-react";
+import { HamClass } from "@/components/ham-class";
 import { SheetLibrary } from "@/components/sheet-library";
 import { TriangleLab } from "@/components/triangle-lab";
 import { WaterLab } from "@/components/water-lab";
@@ -21,6 +23,7 @@ import { WavesLab } from "@/components/waves-lab";
 import { QuizLab } from "@/components/quiz-lab";
 
 const SECTIONS = [
+  { id: "class", label: "Class", icon: BookOpen },
   { id: "sheet", label: "Sheets", icon: Printer },
   { id: "bench", label: "Bench", icon: Gauge },
   { id: "triangles", label: "Triangles", icon: Triangle },
@@ -47,20 +50,20 @@ const WORDS = [
 ];
 
 export function StudyBuddy() {
-  const [section, setSection] = useState<SectionId>("sheet");
+  const [section, setSection] = useState<SectionId>("class");
 
   return (
     <div className="min-h-dvh bg-bg text-fg print:min-h-0 print:bg-paper">
       <header className="border-b border-line bg-surface print:hidden">
         <div className="mx-auto flex max-w-3xl items-end justify-between gap-3 px-4 py-4">
           <div>
-            <p className="text-xs tracking-[0.16em] text-primary uppercase">Technician · T5</p>
+            <p className="text-xs tracking-[0.16em] text-primary uppercase">Technician · from the start</p>
             <h1 className="text-2xl font-semibold tracking-tight">Ham Tech Study Buddy</h1>
           </div>
           <p className="hidden text-right text-xs text-muted sm:block">
-            Metrics and electrical
+            One short lesson
             <br />
-            principles, in pictures
+            at a time
           </p>
         </div>
         <nav className="mx-auto flex max-w-3xl gap-2 overflow-x-auto px-4 pb-3" aria-label="Labs">
@@ -87,6 +90,7 @@ export function StudyBuddy() {
       <main
         className={`mx-auto px-4 py-5 print:max-w-none print:p-0 ${section === "sheet" ? "max-w-5xl" : "max-w-3xl"}`}
       >
+        {section === "class" ? <HamClass onOpenLabs={() => setSection("bench")} /> : null}
         {section === "sheet" ? <SheetLibrary /> : null}
         {section === "bench" ? (
           <div className="space-y-4">
