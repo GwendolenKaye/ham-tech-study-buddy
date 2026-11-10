@@ -25,7 +25,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/sheets
-          cp phone/index.html phone/class.html phone/lessons.json phone/manifest.webmanifest phone/sw.js _site/
+          cp phone/index.html phone/class.html phone/now.html phone/lessons.json phone/manifest.webmanifest phone/sw.js _site/
           cp public/favicon.svg public/icon-192.png public/icon-512.png public/icon-maskable-192.png public/icon-maskable-512.png _site/
           cp -r public/sheets/. _site/sheets/
       - uses: actions/upload-pages-artifact@v3
