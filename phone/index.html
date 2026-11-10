@@ -95,6 +95,12 @@
     </main>
     <script>
       if ("serviceWorker" in navigator) {
+        let reloaded = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (reloaded) return;
+          reloaded = true;
+          location.reload();
+        });
         navigator.serviceWorker.register("sw.js").catch(() => {});
       }
     </script>
