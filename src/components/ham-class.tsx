@@ -83,6 +83,37 @@ function Picture({ kind }: { kind: (typeof LESSONS)[number]["picture"] }) {
       </svg>
     );
   }
+  if (kind === "call" || kind === "split" || kind === "wave" || kind === "words" || kind === "antenna" || kind === "safe") {
+    const lines =
+      kind === "call"
+        ? ["W 8 A B C", "letters, a region, letters"]
+        : kind === "split"
+          ? ["listen here", "talk 600 kHz away"]
+          : kind === "wave"
+            ? ["300 ÷ 146 ≈ 2 meters"]
+            : kind === "words"
+              ? ["push · flow · squeeze", "volts · amps · ohms"]
+              : kind === "antenna"
+                ? ["radio → cable → antenna"]
+                : ["look up", "stay off the power line"];
+    return (
+      <svg viewBox="0 0 320 120" className="h-28 w-full" role="img" aria-label={lines.join(", ")}>
+        {lines.map((line, i) => (
+          <text
+            key={line}
+            x="160"
+            y={lines.length === 1 ? 68 : 52 + i * 28}
+            textAnchor="middle"
+            fill="currentColor"
+            fontSize={kind === "wave" || kind === "call" ? 20 : 16}
+            fontWeight="600"
+          >
+            {line}
+          </text>
+        ))}
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 320 120" className="h-28 w-full" role="img" aria-label="One step, then rest">
       <rect x="40" y="36" width="70" height="48" rx="8" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -139,6 +170,7 @@ export function HamClass({ onOpenLabs }: { onOpenLabs: () => void }) {
         <div className="flex items-start justify-between gap-3">
           <p className="text-xs font-medium tracking-[0.14em] text-primary uppercase">
             Class · lesson {index + 1} of {LESSONS.length}
+            {lesson.part ? ` · ${lesson.part}` : ""}
           </p>
           <p className="text-xs text-muted">{lesson.minutes} min</p>
         </div>
@@ -228,19 +260,26 @@ export function HamClass({ onOpenLabs }: { onOpenLabs: () => void }) {
       </button>
       {showPath ? (
         <ol className="space-y-2">
-          {LESSONS.map((item, itemIndex) => (
-            <li key={item.id}>
-              <button
-                type="button"
-                onClick={() => go(itemIndex)}
-                className={`min-h-11 w-full rounded-xl border px-3 text-left text-sm ${
-                  itemIndex === index ? "border-primary bg-surface" : "border-line bg-bg"
-                }`}
-              >
-                {itemIndex + 1}. {item.title}
-              </button>
-            </li>
-          ))}
+          {LESSONS.map((item, itemIndex) => {
+            const part = item.part ?? "Start here";
+            const previous = itemIndex === 0 ? "" : (LESSONS[itemIndex - 1].part ?? "Start here");
+            return (
+              <li key={item.id}>
+                {part !== previous ? (
+                  <p className="mb-1 mt-3 text-xs font-medium tracking-[0.12em] text-muted uppercase">{part}</p>
+                ) : null}
+                <button
+                  type="button"
+                  onClick={() => go(itemIndex)}
+                  className={`min-h-11 w-full rounded-xl border px-3 text-left text-sm ${
+                    itemIndex === index ? "border-primary bg-surface" : "border-line bg-bg"
+                  }`}
+                >
+                  {itemIndex + 1}. {item.title}
+                </button>
+              </li>
+            );
+          })}
         </ol>
       ) : null}
     </div>
