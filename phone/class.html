@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1016" />
+    <title>Ham Tech class</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="favicon.svg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1016;
+        --surface: #141c26;
+        --fg: #e7e2d6;
+        --muted: #8d948a;
+        --primary: #f0b429;
+        --ink: #1a1408;
+        --line: #2a3544;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      main { max-width: 40rem; margin: 0 auto; padding: 1rem 1rem 3rem; }
+      a { color: var(--primary); }
+      .kicker { margin: 0; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); font-size: 0.75rem; }
+      h1 { margin: 0.3rem 0 0.6rem; font-size: 1.6rem; }
+      .card { border: 1px solid var(--line); background: var(--surface); border-radius: 1rem; padding: 1rem; margin-top: 0.8rem; }
+      li { margin: 0.55rem 0; line-height: 1.4; }
+      button, .choice {
+        min-height: 2.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #1c2733;
+        color: var(--fg);
+        padding: 0.4rem 1rem;
+        font: inherit;
+      }
+      button.primary { background: var(--primary); color: var(--ink); border-color: transparent; font-weight: 700; }
+      button:disabled { opacity: 0.4; }
+      .choice { display: block; width: 100%; text-align: left; border-radius: 0.8rem; margin-top: 0.45rem; }
+      .choice.right { background: var(--primary); color: var(--ink); }
+      .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+      .muted { color: var(--muted); }
+      .path button { display: block; width: 100%; text-align: left; border-radius: 0.8rem; margin-top: 0.4rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="./">Home</a></p>
+      <p class="kicker" id="kicker">Class</p>
+      <h1 id="title">Loading</h1>
+      <p id="lead"></p>
+      <div class="card"><ul id="points"></ul></div>
+      <div class="card">
+        <h2>Check</h2>
+        <p id="prompt"></p>
+        <div id="choices"></div>
+        <p class="muted" id="why"></p>
+        <div class="row">
+          <button type="button" id="back">Back</button>
+          <button type="button" class="primary" id="next">Next lesson</button>
+        </div>
+      </div>
+      <p><button type="button" id="path-toggle">See the whole path</button></p>
+      <div class="path" id="path" hidden></div>
+    </main>
+    <script>
+      const KEY = "ham-tech-phone-class";
+      let lessons = [];
+      let index = 0;
+      let picked = null;
+      let doneThrough = -1;
+
+      const title = document.getElementById("title");
+      const lead = document.getElementById("lead");
+      const points = document.getElementById("points");
+      const prompt = document.getElementById("prompt");
+      const choices = document.getElementById("choices");
+      const why = document.getElementById("why");
+      const kicker = document.getElementById("kicker");
+      const next = document.getElementById("next");
+      const back = document.getElementById("back");
+      const path = document.getElementById("path");
+
+      function render() {
+        const lesson = lessons[index];
+        const correct = picked === lesson.check.answer;
+        kicker.textContent = "Lesson " + (index + 1) + " of " + lessons.length + " · " + lesson.part + " · " + lesson.minutes + " min";
+        title.textContent = lesson.title;
+        lead.textContent = lesson.lead;
+        points.replaceChildren();
+        lesson.points.forEach((point) => {
+          const li = document.createElement("li");
+          li.textContent = point;
+          points.appendChild(li);
+        });
+        prompt.textContent = lesson.check.prompt;
+        choices.replaceChildren();
+        lesson.check.choices.forEach((choice, choiceIndex) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "choice" + (picked !== null && choiceIndex === lesson.check.answer ? " right" : "");
+          button.textContent = choice;
+          button.addEventListener("click", () => choose(choiceIndex));
+          choices.appendChild(button);
+        });
+        why.textContent = picked === null ? "" : lesson.check.why;
+        back.disabled = index === 0;
+        const last = index === lessons.length - 1;
+        next.textContent = last ? "Back to the start" : "Next lesson";
+        next.disabled = !correct && doneThrough <= index;
+      }
+
+      function choose(choice) {
+        picked = choice;
+        if (choice === lessons[index].check.answer) {
+          doneThrough = Math.max(doneThrough, index + 1);
+          localStorage.setItem(KEY, String(doneThrough));
+        }
+        render();
+      }
+
+      function go(nextIndex) {
+        index = nextIndex;
+        picked = null;
+        render();
+        window.scrollTo(0, 0);
+      }
+
+      back.addEventListener("click", () => go(index - 1));
+      next.addEventListener("click", () => go(index === lessons.length - 1 ? 0 : index + 1));
+      document.getElementById("path-toggle").addEventListener("click", () => {
+        path.hidden = !path.hidden;
+      });
+
+      fetch("lessons.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lessons = data;
+          const saved = Number(localStorage.getItem(KEY));
+          if (Number.isFinite(saved) && saved >= 0) {
+            doneThrough = saved;
+            index = Math.min(saved, lessons.length - 1);
+          }
+          let lastPart = "";
+          lessons.forEach((lesson, itemIndex) => {
+            if (lesson.part !== lastPart) {
+              const label = document.createElement("p");
+              label.className = "kicker";
+              label.textContent = lesson.part;
+              path.appendChild(label);
+              lastPart = lesson.part;
+            }
+            const button = document.createElement("button");
+            button.type = "button";
+            button.textContent = itemIndex + 1 + ". " + lesson.title;
+            button.addEventListener("click", () => {
+              path.hidden = true;
+              go(itemIndex);
+            });
+            path.appendChild(button);
+          });
+          render();
+        });
+    </script>
+  </body>
+</html>
