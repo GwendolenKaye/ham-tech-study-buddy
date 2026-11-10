@@ -1,8 +1,9 @@
-const CACHE = "ham-tech-v3";
+const CACHE = "ham-tech-v4";
 const CORE = [
   "./",
   "./index.html",
   "./class.html",
+  "./now.html",
   "./lessons.json",
   "./manifest.webmanifest",
   "./sheets/packet.html",

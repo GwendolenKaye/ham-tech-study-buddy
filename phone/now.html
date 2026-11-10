@@ -7,7 +7,16 @@
     <title>Ham Tech class</title>
     <meta http-equiv="Cache-Control" content="no-cache" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <script>
+      let hamInstall;
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        hamInstall = event;
+        const button = document.getElementById("save");
+        if (button) button.textContent = "Put this on my phone";
+      });
+    </script>
     <style>
       :root {
         color-scheme: dark;
@@ -52,6 +61,8 @@
   </head>
   <body>
     <main>
+      <p><button type="button" class="primary" id="save">Put this on my phone</button></p>
+      <p class="muted" id="save-note"></p>
       <p><a href="./">Home</a></p>
       <p class="kicker" id="kicker">Class</p>
       <h1 id="title">Loading</h1>
@@ -71,6 +82,18 @@
       <div class="path" id="path" hidden></div>
     </main>
     <script>
+      if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+      document.getElementById("save").addEventListener("click", async () => {
+        const note = document.getElementById("save-note");
+        if (!hamInstall) {
+          note.textContent = "If an old Ham Tech icon is already on the phone, hold it, tap the i or App info, then Uninstall. Open this page again and tap the gold button.";
+          return;
+        }
+        hamInstall.prompt();
+        await hamInstall.userChoice;
+        hamInstall = null;
+        note.textContent = "Look for Ham Tech in your app list. Hold it, then drag it onto the home screen.";
+      });
       const KEY = "ham-tech-phone-class";
       let lessons = [];
       let index = 0;

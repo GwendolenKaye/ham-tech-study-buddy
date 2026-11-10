@@ -1,8 +1,9 @@
 {
   "name": "Ham Tech Study Buddy",
   "short_name": "Ham Tech",
-  "description": "Technician ham radio study sheets you can print.",
-  "start_url": "./index.html",
+  "description": "54 short Technician lessons.",
+  "id": "./now.html",
+  "start_url": "./now.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0b1016",
