@@ -1,0 +1,2041 @@
+{
+  "title": "Ham Radio Technician: From Zero to the Exam",
+  "subtitle": "Six weeks. About two hours a week. No Morse. 26 of 35 is a pass.",
+  "weeks": [
+    {
+      "number": 1,
+      "title": "What this is",
+      "about": "Ham radio, who it is for, and what the test actually is. You can stop after any lecture.",
+      "outcomes": [
+        "Say what ham radio is, in one sentence.",
+        "Name the passing score: 26 of 35.",
+        "Know that listening is legal before the license, and transmitting is not."
+      ],
+      "minutes": 45,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "what",
+          "title": "What ham radio is",
+          "minutes": 4,
+          "lead": "Ham radio is a way for ordinary people to talk to each other by radio, without a phone company in the middle.",
+          "points": [
+            "You use a radio you own. The other person uses a radio they own. The signal goes through the air.",
+            "It is a hobby, a skill, and a public service. People use it to chat, to experiment, and to help when phones and internet fail.",
+            "It is not your cell phone, and it is not CB. In the United States you need a license from the FCC before you transmit.",
+            "Listening is always allowed. The license is for talking."
+          ],
+          "check": {
+            "prompt": "What is ham radio, in one sentence?",
+            "choices": [
+              "A phone plan you pay for each month",
+              "People talking to each other by radio, with a license",
+              "A kind of Wi-Fi router"
+            ],
+            "answer": 1,
+            "why": "Ham radio is licensed two-way radio between people. No monthly plan. No phone company carrying the call."
+          }
+        },
+        {
+          "id": "who",
+          "title": "Who it is for",
+          "minutes": 3,
+          "lead": "You do not need to be an engineer. You need curiosity and a license.",
+          "points": [
+            "Some people want a radio in the car or a small handheld for the neighborhood and for storms.",
+            "Some people want to reach other countries. Some build antennas. Some help at public events.",
+            "The entry license is called Technician. It is the first step. You can stop there and still have a full, useful radio life on local airwaves.",
+            "You will not be tested on Morse code. That requirement ended years ago."
+          ],
+          "check": {
+            "prompt": "Do you have to know Morse code to get a Technician license?",
+            "choices": [
+              "Yes, it is still required",
+              "No"
+            ],
+            "answer": 1,
+            "why": "Morse code is a skill some hams enjoy. It is not on the test, and you do not need it to get on the air."
+          }
+        },
+        {
+          "id": "license",
+          "title": "The license, and nothing else",
+          "minutes": 4,
+          "lead": "The test is smaller than it feels when you look at the whole book.",
+          "points": [
+            "The Technician exam is 35 multiple-choice questions. You need 26 right. That is it.",
+            "A team of volunteer examiners gives the test. You do not go to a government office.",
+            "When you pass, the FCC gives you a call sign. That call sign is your name on the air.",
+            "The license lasts 10 years. The privileges you get are written down. You do not have to memorize the whole radio universe on day one."
+          ],
+          "check": {
+            "prompt": "How many questions do you need right, out of 35?",
+            "choices": [
+              "All 35",
+              "26",
+              "18"
+            ],
+            "answer": 1,
+            "why": "26 out of 35. You are allowed to miss 9. The book is a pool of questions. The test only uses 35 of them."
+          }
+        },
+        {
+          "id": "radio",
+          "title": "What a radio does",
+          "minutes": 4,
+          "lead": "A radio does two jobs. It sends, and it listens.",
+          "points": [
+            "When you talk, the radio turns your voice into a radio wave and lets it go.",
+            "When you listen, it catches a wave and turns it back into sound.",
+            "The same idea is in a tiny handheld and in a big radio on a desk. The size changes the reach, not the basic job.",
+            "You will hear the words transmitter, receiver, and transceiver. A transceiver is simply both jobs in one box."
+          ],
+          "check": {
+            "prompt": "A transceiver is…",
+            "choices": [
+              "A radio that only listens",
+              "A radio that sends and listens",
+              "The license itself"
+            ],
+            "answer": 1,
+            "why": "Transceiver means transmitter plus receiver. Most ham radios you will buy are transceivers."
+          }
+        },
+        {
+          "id": "bands",
+          "title": "Channels, without the math",
+          "minutes": 4,
+          "lead": "A frequency is a spot on the dial. A band is a neighborhood of spots.",
+          "points": [
+            "Two people who want to talk have to be on the same spot, or they will not hear each other.",
+            "Hams talk about bands by a length: 2 meters, 70 centimeters, 10 meters. The name is a nickname for that neighborhood.",
+            "2 meters and 70 centimeters are the local bands. A handheld lives there. That is where most new Technicians start.",
+            "Longer-distance bands exist. You do not need them for the first week. The book will introduce them when you are ready."
+          ],
+          "check": {
+            "prompt": "Where does a new Technician usually start?",
+            "choices": [
+              "A handheld on the local 2 meter and 70 centimeter bands",
+              "A huge shortwave station on day one",
+              "Any frequency they feel like"
+            ],
+            "answer": 0,
+            "why": "A small handheld on 2 meters and 70 centimeters is the normal first radio. You stay inside the places your license allows."
+          }
+        },
+        {
+          "id": "repeater",
+          "title": "The helper on the hill",
+          "minutes": 4,
+          "lead": "A handheld does not reach very far by itself. A repeater fixes that.",
+          "points": [
+            "A repeater is a radio on a tall building or a hill. It hears you and sends you back out, louder and higher.",
+            "You listen on one frequency and talk on another. The radio remembers the split. You do not do the math in your head.",
+            "Many repeaters want a quiet tone so they know you meant to use them. That tone is called CTCSS. Your radio sends it. You usually cannot hear it.",
+            "If you and the other person can hear each other without the repeater, you can move to the same frequency and leave the hilltop free. That is called simplex."
+          ],
+          "check": {
+            "prompt": "What is a repeater for?",
+            "choices": [
+              "To make a handheld reach farther",
+              "To replace your license",
+              "To play music"
+            ],
+            "answer": 0,
+            "why": "A repeater hears a small radio and retransmits it from up high. That is why a handheld can talk across a town."
+          }
+        },
+        {
+          "id": "first",
+          "title": "Your first time talking",
+          "minutes": 4,
+          "lead": "The first contact is short. You do not give a speech.",
+          "points": [
+            "Listen first. If someone is already talking, wait.",
+            "On a repeater, say your call sign. That is the whole introduction. Someone will answer, or they will not. Both are normal.",
+            "Speak plainly. Say your name if you want. Say where you are if you want. Then say your call sign again when you are done.",
+            "Leave a short pause between transmissions so someone else can break in."
+          ],
+          "check": {
+            "prompt": "What do you do before you transmit?",
+            "choices": [
+              "Listen",
+              "Talk immediately so people know you are there",
+              "Send music"
+            ],
+            "answer": 0,
+            "why": "Listen first. Then say your call sign. A call sign is enough to start."
+          }
+        },
+        {
+          "id": "rules",
+          "title": "The few rules that matter first",
+          "minutes": 4,
+          "lead": "The rule book is long. Day one only needs four ideas.",
+          "points": [
+            "Say your call sign every 10 minutes during a conversation, and again at the end.",
+            "Stay on frequencies your license allows. A Technician has a lot of local room. The HF voice slice is small. The sheets list it when you want it.",
+            "No music. No business. No hiding what you are saying. Be decent.",
+            "Use the least power that still makes the contact. A handheld at low power is often enough."
+          ],
+          "check": {
+            "prompt": "How often do you say your call sign during a conversation?",
+            "choices": [
+              "Every 10 minutes, and at the end",
+              "Only once a year",
+              "Never, if you already said hello"
+            ],
+            "answer": 0,
+            "why": "Every 10 minutes, and when you finish. That is how other people know who is on the air."
+          }
+        },
+        {
+          "id": "next",
+          "title": "What to study next",
+          "minutes": 3,
+          "lead": "You do not study the whole book at once. The next lessons are the words you will actually hear.",
+          "points": [
+            "If the book is open to electrical ideas and it feels like noise, use the Water, Metrics, and Ohm buttons in this app. Those are the same ideas, as pictures.",
+            "The printed sheets are a reference, not a lesson. Look at one sheet after you have met the idea. Do not start there.",
+            "A quiz is useful after a chapter, not before. Missing questions is how you find the next thing to learn. It is not a grade on you.",
+            "A good session is one lesson here, then one short chapter or one video on that same idea. Then stop."
+          ],
+          "check": {
+            "prompt": "When is a quiz most useful?",
+            "choices": [
+              "After you have met the idea, to see what stuck",
+              "Before you know any of the words, as a surprise",
+              "Instead of ever learning the idea"
+            ],
+            "answer": 0,
+            "why": "A quiz shows the gap. It works after a lesson. It feels cruel before one. One idea, then a few questions, then rest."
+          }
+        },
+        {
+          "id": "exam-day",
+          "title": "What test day looks like",
+          "minutes": 4,
+          "lead": "The test is smaller than the book. You sit with volunteer examiners, not at a government office.",
+          "points": [
+            "35 multiple-choice questions. You need 26 right. You may miss 9.",
+            "Bring a photo ID and the fee the session lists. A pencil is usually provided. Calculators are often allowed if they have no stored text.",
+            "You find out if you passed before you leave. The FCC call sign usually shows in the database within a few days. You wait for that before you transmit.",
+            "Sessions are run by local clubs. Search “ARRL exam session” plus your city when you are ready. You do not need to book one in week 1."
+          ],
+          "check": {
+            "prompt": "Where do you take the Technician exam?",
+            "choices": [
+              "At a volunteer examiner session, usually run by a local club",
+              "At an FCC office",
+              "Online, with no one watching"
+            ],
+            "answer": 0,
+            "why": "Volunteer examiners give the test. You do not go to a government office. The call sign arrives after you pass, not the same minute."
+          }
+        }
+      ],
+      "pass": 6,
+      "quiz": [
+        {
+          "prompt": "Ham radio is…",
+          "choices": [
+            "A monthly phone plan",
+            "Licensed two-way radio between people",
+            "The same as CB"
+          ],
+          "answer": 1,
+          "why": "You own the radio. The other person owns theirs. The signal goes through the air. A license is required to transmit."
+        },
+        {
+          "prompt": "How many questions are on the Technician exam, and how many must you get right?",
+          "choices": [
+            "50, and you need 40",
+            "35, and you need 26",
+            "100, and you need 70"
+          ],
+          "answer": 1,
+          "why": "35 questions. 26 is a pass. You may miss 9."
+        },
+        {
+          "prompt": "Morse code on the Technician exam is…",
+          "choices": [
+            "Required",
+            "Not required",
+            "Required only for 2 meters"
+          ],
+          "answer": 1,
+          "why": "Morse is a hobby some people enjoy. It is not on the test."
+        },
+        {
+          "prompt": "A transceiver is a radio that…",
+          "choices": [
+            "Only listens",
+            "Sends and listens",
+            "Replaces the license"
+          ],
+          "answer": 1,
+          "why": "Transmitter plus receiver, in one box."
+        },
+        {
+          "prompt": "Before you transmit, you…",
+          "choices": [
+            "Listen",
+            "Talk immediately so people know you are there",
+            "Send music"
+          ],
+          "answer": 0,
+          "why": "Listen first. Then say your call sign."
+        },
+        {
+          "prompt": "You may transmit…",
+          "choices": [
+            "As soon as you finish the book",
+            "When your call sign is in the FCC database",
+            "On any frequency, if you are polite"
+          ],
+          "answer": 1,
+          "why": "Passing is not the same moment as being allowed to transmit. Wait for the database."
+        },
+        {
+          "prompt": "2 meters and 70 centimeters are…",
+          "choices": [
+            "The local bands a handheld uses",
+            "Bands only Generals may use",
+            "Weather-radio channels"
+          ],
+          "answer": 0,
+          "why": "Those are the neighborhoods a new Technician lives in."
+        },
+        {
+          "prompt": "How often do you say your call sign during a conversation?",
+          "choices": [
+            "Every 10 minutes, and at the end",
+            "Once a year",
+            "Never, if you already said hello"
+          ],
+          "answer": 0,
+          "why": "Every 10 minutes, and when you finish."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Listen first",
+      "about": "A handheld, legal listening, the repeater near Kent, and a script for the first time you talk.",
+      "outcomes": [
+        "Choose a simple 2 meter / 70 centimeter handheld.",
+        "Listen without transmitting.",
+        "Say a first contact in four short sentences."
+      ],
+      "minutes": 60,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "handheld",
+          "title": "The first radio",
+          "minutes": 5,
+          "lead": "A handheld is enough for the first year. You do not need a desk radio or a tower.",
+          "points": [
+            "Look for a 2 meter and 70 centimeter handheld, often marked VHF/UHF or 144/440. Five watts is plenty for local repeaters.",
+            "A rubber-duck antenna is fine for listening and for nearby repeaters. Height and a clear view matter more than a bigger radio.",
+            "You can buy one before the license. You may listen the day it arrives. You may not press the talk button until your call sign is in the FCC database.",
+            "Skip the extras for now: digital voice, GPS, and a second battery can wait. A charger and the manual are the whole kit."
+          ],
+          "check": {
+            "prompt": "What may you do with a new handheld before the call sign arrives?",
+            "choices": [
+              "Listen",
+              "Transmit on 146.520",
+              "Use a repeater if you speak quietly"
+            ],
+            "answer": 0,
+            "why": "Listening is always legal. Transmitting waits for a license that shows in the FCC database."
+          }
+        },
+        {
+          "id": "listen",
+          "title": "How to listen",
+          "minutes": 4,
+          "lead": "The first skill is hearing other people. You learn the rhythm before you ever talk.",
+          "points": [
+            "Turn the squelch up until the hiss stops, then back down a little. Too much squelch hides weak stations.",
+            "Volume only changes your speaker. It does not change what anyone else hears.",
+            "Stay on one frequency for ten minutes. Notice who identifies, how long they talk, and the pause they leave.",
+            "NOAA weather radio is legal listening practice if the ham bands are quiet. It is not a ham frequency. Do not transmit there."
+          ],
+          "check": {
+            "prompt": "What does the volume knob change?",
+            "choices": [
+              "Only your speaker",
+              "Your transmit power",
+              "The repeater’s tone"
+            ],
+            "answer": 0,
+            "why": "Volume is local. Power, frequency, and tone are separate controls."
+          }
+        },
+        {
+          "id": "local",
+          "title": "The repeaters near you",
+          "minutes": 5,
+          "lead": "A repeater is a radio on a hill that hears you and retransmits you. Local ones are listed, not secret.",
+          "points": [
+            "Near Kent, a commonly listed 2 meter repeater is 146.895 MHz, minus offset, tone 118.8, call sign K8IV. Confirm it on RepeaterBook before you rely on it. Listings change.",
+            "The radio listens on 146.895. When you press the button it jumps down 600 kHz, talks, and jumps back. You set the offset and the tone once.",
+            "146.520 MHz is the 2 meter calling frequency. Both people use that same frequency. No tone. Do not sit there for a long chat.",
+            "Akron and Cleveland have more. One local repeater is enough for the first month."
+          ],
+          "check": {
+            "prompt": "On a repeater, the offset is…",
+            "choices": [
+              "The difference between the frequency you hear and the frequency you transmit on",
+              "How loud the speaker is",
+              "Your call sign"
+            ],
+            "answer": 0,
+            "why": "2 meters usually uses a 600 kHz offset. The radio does the jump. The tone, if required, is what opens the repeater."
+          }
+        },
+        {
+          "id": "script",
+          "title": "A script for the first contact",
+          "minutes": 4,
+          "lead": "You do not need a speech. You need four short sentences and a pause.",
+          "points": [
+            "Listen for 30 seconds. If someone is talking, wait.",
+            "Press the button, pause one second, and say your call sign. Release the button.",
+            "If someone answers, say your name, say you are new, and say your call sign again. Then release.",
+            "If no one answers, wait a minute and try once more. Silence is normal. It is not a grade."
+          ],
+          "check": {
+            "prompt": "What is enough to start a contact on a repeater?",
+            "choices": [
+              "Your call sign",
+              "A long introduction and your address",
+              "CQ CQ CQ, then your life story"
+            ],
+            "answer": 0,
+            "why": "Say the call sign. Leave a pause. Someone answers, or they do not. Both are a normal first night."
+          }
+        }
+      ],
+      "pass": 6,
+      "quiz": [
+        {
+          "prompt": "A good first radio is…",
+          "choices": [
+            "A 2 meter and 70 centimeter handheld",
+            "A tower and a desk radio",
+            "Any radio, including a weather radio you transmit on"
+          ],
+          "answer": 0,
+          "why": "A dual-band handheld covers the local bands. A tower can wait."
+        },
+        {
+          "prompt": "Before the call sign arrives, you may…",
+          "choices": [
+            "Listen",
+            "Transmit on a quiet frequency",
+            "Use the repeater if no one answers"
+          ],
+          "answer": 0,
+          "why": "Listening is legal. Transmitting is not, until the license is in the database."
+        },
+        {
+          "prompt": "Squelch is for…",
+          "choices": [
+            "Quieting the hiss until a signal appears",
+            "Raising transmit power",
+            "Changing your call sign"
+          ],
+          "answer": 0,
+          "why": "Too much squelch also hides weak people. Volume is a different knob."
+        },
+        {
+          "prompt": "146.895 MHz near Kent is an example of…",
+          "choices": [
+            "A repeater output you listen to",
+            "A frequency you invent",
+            "The NOAA weather channel"
+          ],
+          "answer": 0,
+          "why": "You listen on the output. The radio jumps to the input when you transmit. Confirm the listing before you rely on it."
+        },
+        {
+          "prompt": "The usual 2 meter repeater offset is…",
+          "choices": [
+            "600 kHz",
+            "5 MHz",
+            "10 meters"
+          ],
+          "answer": 0,
+          "why": "600 kHz on 2 meters. 5 MHz is the usual 70 centimeter offset."
+        },
+        {
+          "prompt": "146.520 MHz is…",
+          "choices": [
+            "The 2 meter FM calling frequency",
+            "A tone",
+            "A General-only band"
+          ],
+          "answer": 0,
+          "why": "Simplex calling. Both people on the same frequency. Move off if the chat will last."
+        },
+        {
+          "prompt": "To start on a repeater you say…",
+          "choices": [
+            "Your call sign",
+            "CQ and your home address",
+            "Nothing, the radio identifies you"
+          ],
+          "answer": 0,
+          "why": "Call sign, pause, wait. That is the whole introduction."
+        },
+        {
+          "prompt": "If no one answers…",
+          "choices": [
+            "That is normal",
+            "You failed",
+            "You should transmit continuously until someone does"
+          ],
+          "answer": 0,
+          "why": "Silence is a normal first night. Try once more later. Do not hold the button down."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "The rules you can get wrong",
+      "about": "Control operator, what you may not send, power, and identifying. These are the rules that cost people points.",
+      "outcomes": [
+        "Name the control operator.",
+        "List what you may not send.",
+        "Use the least power that works."
+      ],
+      "minutes": 70,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "control",
+          "title": "Who is allowed to transmit",
+          "minutes": 4,
+          "lead": "A station does not transmit by itself. A licensed person is responsible for every transmission.",
+          "points": [
+            "That person is the control operator. The place where they control the radio is the control point.",
+            "The station may use only the frequencies and modes the control operator is allowed to use.",
+            "An unlicensed person, a child for example, may speak into the microphone if a control operator is right there and in charge.",
+            "You are responsible for what your station sends, even if someone else is holding the microphone."
+          ],
+          "check": {
+            "prompt": "Who is responsible for the transmissions from an amateur station?",
+            "choices": [
+              "The control operator, and the station licensee",
+              "Only the person who bought the radio",
+              "The repeater, if you are using one"
+            ],
+            "answer": 0,
+            "why": "The control operator runs the station. The licensee is also responsible. An unlicensed voice is allowed only while a control operator is present."
+          }
+        },
+        {
+          "id": "forbidden",
+          "title": "What you may not send",
+          "minutes": 4,
+          "lead": "Ham radio is not a broadcast station, a music service, or a private business line.",
+          "points": [
+            "No music. No broadcasting to the general public. No obscene language.",
+            "No secret codes meant to hide the meaning. Ordinary abbreviations and Q codes are fine. Control signals for a satellite are the rare exception.",
+            "You may not be paid to operate, and you may not use the radio to run a business. Selling a radio to another ham once in a while is allowed. Doing it regularly is not.",
+            "News gathering for a broadcast station is not a ham activity. Helping in a real emergency is."
+          ],
+          "check": {
+            "prompt": "Which of these is allowed?",
+            "choices": [
+              "Telling another ham you have a used radio for sale, once",
+              "Playing music for people who are listening",
+              "Hiding a message in a private cipher"
+            ],
+            "answer": 0,
+            "why": "An occasional notice that equipment is for sale is fine. Music, broadcasting, and codes that hide the meaning are not."
+          }
+        },
+        {
+          "id": "oneway",
+          "title": "One-way transmissions",
+          "minutes": 3,
+          "lead": "Most ham contacts are two people talking. A few one-way transmissions are still allowed.",
+          "points": [
+            "A beacon sends a short identification so people can see how far the band is open.",
+            "Telemetry is data about a station, such as a satellite reporting its health. Telecommand is a signal that controls a station.",
+            "Code practice and information bulletins for other hams are allowed. So is a real distress call.",
+            "A beacon is limited to 100 watts. It still has to identify."
+          ],
+          "check": {
+            "prompt": "A beacon exists to…",
+            "choices": [
+              "Let people observe radio propagation",
+              "Play music down the band",
+              "Replace your call sign"
+            ],
+            "answer": 0,
+            "why": "A beacon is a one-way signal used to see where the band is reaching. It must identify, and it may not run more than 100 watts."
+          }
+        },
+        {
+          "id": "term",
+          "title": "Ten years, then renew",
+          "minutes": 3,
+          "lead": "The license is good for 10 years. You renew it. You do not take the test again if you renew on time.",
+          "points": [
+            "After it expires you have a 2 year grace period to renew without retesting.",
+            "During that grace period you may not transmit. The license is not valid until it is renewed and shows in the FCC database.",
+            "There are three written license classes: Technician, General, and Amateur Extra. Morse code is not required for any of them.",
+            "A new Technician usually receives a call sign with two letters, a number, and three letters, like KD8XYZ. That example is not a real assignment."
+          ],
+          "check": {
+            "prompt": "Your license expired last month. May you transmit while you renew it?",
+            "choices": [
+              "No",
+              "Yes, for two years",
+              "Yes, on 2 meters only"
+            ],
+            "answer": 0,
+            "why": "The grace period lets you renew without a new exam. It does not let you transmit. Wait until the renewal is in the FCC database."
+          }
+        },
+        {
+          "id": "share",
+          "title": "Sharing a frequency",
+          "minutes": 4,
+          "lead": "You do not own a frequency. On some bands you are a guest of another service.",
+          "points": [
+            "Where amateurs are secondary, you must not interfere with the primary service, and you must accept their interference.",
+            "A band plan is a voluntary agreement about where different modes sit. It is good manners and good coordination. It is not the FCC rule.",
+            "If an FCC rule and a band plan disagree, you obey the FCC.",
+            "Repeater coordination is also voluntary. If two repeaters interfere, the coordinated one has priority."
+          ],
+          "check": {
+            "prompt": "On a band where amateurs are secondary, you…",
+            "choices": [
+              "Must not interfere with the primary service",
+              "Have first rights because you have a license",
+              "May ignore the primary station if you were there first"
+            ],
+            "answer": 0,
+            "why": "Secondary means you yield. A band plan is voluntary. The FCC rule is not."
+          }
+        },
+        {
+          "id": "power",
+          "title": "How much power",
+          "minutes": 3,
+          "lead": "Use the least power that makes the contact. There is also a ceiling.",
+          "points": [
+            "On most VHF and UHF bands the ceiling is 1500 watts peak envelope power. A handheld is a few watts. You will not be near 1500.",
+            "On the Technician HF frequencies, including 10 meter phone, the ceiling is 200 watts.",
+            "More power does not fix a bad antenna, and it is more likely to bother a neighbor.",
+            "In a real emergency, saving a life comes first. The normal frequency limits can yield to that. You still identify."
+          ],
+          "check": {
+            "prompt": "The power you should use is…",
+            "choices": [
+              "The least that still completes the contact",
+              "Always the maximum your radio offers",
+              "200 watts on every band"
+            ],
+            "answer": 0,
+            "why": "The rule is the minimum power necessary. 1500 watts is the usual ceiling, and 200 watts is the ceiling on the Technician HF segments."
+          }
+        },
+        {
+          "id": "idextra",
+          "title": "Identifying, the details",
+          "minutes": 4,
+          "lead": "You already know the 10 minute rule. The test asks a few sharper versions.",
+          "points": [
+            "The identification is in English. It is your call sign, spoken or sent clearly.",
+            "A tactical name like “rest stop” is fine at a public event if you also give your FCC call sign every 10 minutes.",
+            "A special-event call sign is a short 1 by 1. The station must also send the trustee’s own call sign at least once an hour.",
+            "At the end of a contact, you identify again, even if 10 minutes have not passed."
+          ],
+          "check": {
+            "prompt": "A tactical name at a race is enough by itself.",
+            "choices": [
+              "No. Your FCC call sign is still required every 10 minutes",
+              "Yes, if net control knows you",
+              "Yes, if you said your name"
+            ],
+            "answer": 0,
+            "why": "Tactical names are convenient. They do not replace the call sign. English, every 10 minutes, and at the end."
+          }
+        },
+        {
+          "id": "cq",
+          "title": "CQ, reports, and three Q codes",
+          "minutes": 4,
+          "lead": "A few old abbreviations are still the normal way to start and to describe a signal.",
+          "points": [
+            "CQ means you are calling anyone. On a repeater you usually just say your call sign. CQ is more at home on HF and on simplex.",
+            "A voice signal report is two numbers: readability from 1 to 5, and strength from 1 to 9. “Five nine” means easy to understand and strong.",
+            "QRM is interference from other stations. QRN is static and noise. QSY means change frequency.",
+            "You do not need a secret code book. These are just short, shared words."
+          ],
+          "check": {
+            "prompt": "QRM means…",
+            "choices": [
+              "Interference from other stations",
+              "Change frequency",
+              "Static from a storm"
+            ],
+            "answer": 0,
+            "why": "QRM is man-made interference. QRN is natural noise. QSY means move to another frequency."
+          }
+        }
+      ],
+      "pass": 6,
+      "quiz": [
+        {
+          "prompt": "Who is responsible for the transmissions from a station?",
+          "choices": [
+            "The control operator",
+            "The person who owns the antenna",
+            "Whoever is closest to the radio"
+          ],
+          "answer": 0,
+          "why": "The control operator is the licensed person in charge of the station while it is transmitting."
+        },
+        {
+          "prompt": "Which of the following is prohibited on ham radio?",
+          "choices": [
+            "Casual conversation",
+            "Music broadcasting",
+            "Asking about the weather"
+          ],
+          "answer": 1,
+          "why": "You may not broadcast music, advertising, or content that is primarily for entertainment like a commercial station."
+        },
+        {
+          "prompt": "A one-way transmission is allowed when…",
+          "choices": [
+            "You are testing and identify",
+            "You feel like it",
+            "The other station is busy"
+          ],
+          "answer": 0,
+          "why": "One-way is allowed for testing, telemetry, or when no one is listening, but you still identify."
+        },
+        {
+          "prompt": "A Technician license is valid for…",
+          "choices": [
+            "10 years",
+            "5 years",
+            "Lifetime"
+          ],
+          "answer": 0,
+          "why": "Ten years, then you renew. The call sign stays with you."
+        },
+        {
+          "prompt": "If someone is already talking on a frequency, you…",
+          "choices": [
+            "Wait or ask if you may join",
+            "Transmit over them",
+            "Change your power to full"
+          ],
+          "answer": 0,
+          "why": "Share the frequency. Listen first. Do not step on another conversation."
+        },
+        {
+          "prompt": "The power rule is…",
+          "choices": [
+            "Use the least power that gets the job done",
+            "Always use maximum",
+            "5 watts is illegal"
+          ],
+          "answer": 0,
+          "why": "Minimum necessary power. On VHF/UHF a few watts is usually plenty."
+        },
+        {
+          "prompt": "You must identify…",
+          "choices": [
+            "Every 10 minutes and at the end",
+            "Only at the start",
+            "Only if asked"
+          ],
+          "answer": 0,
+          "why": "Call sign every 10 minutes during a contact, and when you finish."
+        },
+        {
+          "prompt": "CQ means…",
+          "choices": [
+            "I am calling any station",
+            "I am finished",
+            "Emergency"
+          ],
+          "answer": 0,
+          "why": "CQ is the general call. On VHF/UHF repeaters people usually just say their call sign instead."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Signals and antennas",
+      "about": "How far a signal goes, dipole and vertical lengths, polarization, and a Yagi. Why VHF stops at the hill.",
+      "outcomes": [
+        "Explain line of sight.",
+        "Use 468 divided by megahertz for a dipole.",
+        "Point a beam."
+      ],
+      "minutes": 90,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "wave",
+          "title": "A radio wave, without the scare",
+          "minutes": 4,
+          "lead": "A radio wave is a ripple moving at the speed of light. Frequency is how fast it ripples. Wavelength is how long one ripple is.",
+          "points": [
+            "Hertz means ripples per second. A megahertz is a million of them.",
+            "The length of one ripple, in meters, is about 300 divided by the frequency in megahertz.",
+            "300 divided by 146 is about 2. That is why 146 MHz is called the 2 meter band. The name is a length.",
+            "You will practice that division later. Today, the win is knowing the name of the band is the length of the wave."
+          ],
+          "check": {
+            "prompt": "Why is 146 MHz called 2 meters?",
+            "choices": [
+              "One wave is about 2 meters long",
+              "The radio must be 2 meters from the ground",
+              "You may only talk for 2 meters of distance"
+            ],
+            "answer": 0,
+            "why": "Wavelength in meters is about 300 ÷ megahertz. 300 ÷ 146 is about 2. The band is named for that length."
+          }
+        },
+        {
+          "id": "map",
+          "title": "Where a Technician may talk",
+          "minutes": 5,
+          "lead": "You do not get every frequency. You get a useful set, and the local ones are the generous part.",
+          "points": [
+            "6 meters, 2 meters, 1.25 meters, and 70 centimeters are yours, in almost every mode. A handheld lives on 2 meters and 70 centimeters.",
+            "Above those, the higher bands are yours too. You will not need them in the first month.",
+            "On HF, voice is only a slice of 10 meters: 28.300 to 28.500 MHz, and no more than 200 watts. Morse code has small slices on 80, 40, and 15 meters.",
+            "20 meters is not a Technician band. That one waits for General. If you are not sure a frequency is yours, do not transmit there."
+          ],
+          "check": {
+            "prompt": "Which of these is a normal first place for a Technician?",
+            "choices": [
+              "2 meters and 70 centimeters",
+              "All of 20 meters",
+              "Any frequency, if you speak politely"
+            ],
+            "answer": 0,
+            "why": "Local VHF and UHF are the Technician's home. 20 meters is a General and Extra band. Politeness does not add frequencies."
+          }
+        },
+        {
+          "id": "paths",
+          "title": "One path, or several",
+          "minutes": 4,
+          "lead": "Parts are either in a single line, or side by side. That is series and parallel.",
+          "points": [
+            "Series means one path. The same current goes through each part. The pushes add up. The squeezes add up.",
+            "Parallel means branches. Each branch feels the same push. The flows add up. The total squeeze is less than the smallest branch.",
+            "A switch or a fuse belongs in the path, in series, because it has to be able to stop everything.",
+            "Two equal resistors side by side act like half of one of them. You do not need more cases today."
+          ],
+          "check": {
+            "prompt": "In a series circuit, what is true?",
+            "choices": [
+              "There is one path, and the current is the same all the way around",
+              "Every part gets a different current",
+              "The parts are side by side"
+            ],
+            "answer": 0,
+            "why": "Series is one loop. Current is the same everywhere in that loop. Side by side is parallel."
+          }
+        },
+        {
+          "id": "modes",
+          "title": "FM, SSB, and how wide they are",
+          "minutes": 5,
+          "lead": "A mode is the way the voice rides on the wave. Wider modes take more room on the band.",
+          "points": [
+            "FM is what repeaters and handhelds use. It is about 10 to 15 kHz wide. The strongest signal wins, which is called the capture effect.",
+            "SSB is a narrow voice mode, about 3 kHz wide. It reaches farther for the same power. On 10 meters, VHF, and UHF, hams use upper sideband.",
+            "AM is about 6 kHz wide. The test’s name for Morse is CW, and it is the narrowest, about 150 Hz. You still do not need to learn the code.",
+            "Because SSB is narrower, it is the better choice for a weak signal. FM sounds cleaner when signals are strong."
+          ],
+          "check": {
+            "prompt": "Which voice mode is narrowest?",
+            "choices": [
+              "SSB, about 3 kHz",
+              "FM, about 10 to 15 kHz",
+              "A mode that is 6 MHz wide"
+            ],
+            "answer": 0,
+            "why": "SSB is about 3 kHz. FM is about 10 to 15 kHz. Fast-scan television is the very wide one, about 6 MHz. CW is narrower than all of these, and it is not required."
+          }
+        },
+        {
+          "id": "digital",
+          "title": "Digital voice, APRS, and satellites",
+          "minutes": 5,
+          "lead": "Some contacts are data, or a voice that has been turned into digits, or a repeater flying overhead.",
+          "points": [
+            "Packet, PSK31, and FT8 are digital modes. A computer sound card often makes the tones. You still identify with your call sign.",
+            "APRS is the Automatic Packet Reporting System. It sends a position, often on 144.390 MHz, so other people can see where a station is.",
+            "DMR puts two digital conversations on one repeater by taking turns in time slots. A color code is its version of a tone. D-STAR and System Fusion are other digital-voice systems.",
+            "A satellite hears your uplink and sends a downlink. Listen first. The frequency seems to drift as the satellite moves. That drift is Doppler."
+          ],
+          "check": {
+            "prompt": "APRS is used to…",
+            "choices": [
+              "Report a station’s position",
+              "Replace the need for a license",
+              "Send music on 2 meters"
+            ],
+            "answer": 0,
+            "why": "APRS beacons a position and short data, commonly on 144.390 MHz. A satellite contact needs an uplink, a downlink, and attention to Doppler."
+          }
+        },
+        {
+          "id": "links",
+          "title": "Radios tied together by the internet",
+          "minutes": 3,
+          "lead": "Some repeaters are connected to distant repeaters through the internet. Your license still matters.",
+          "points": [
+            "IRLP and EchoLink connect amateur stations over the internet. IRLP is usually a radio talking to a local node, using keypad tones.",
+            "EchoLink can be a computer or a phone. You still have to be a licensed amateur to transmit.",
+            "A gateway is the station that joins the radio side to the internet side.",
+            "What you say still has to follow the same rules. The internet does not make music, business, or a missing call sign legal."
+          ],
+          "check": {
+            "prompt": "To transmit through EchoLink you need…",
+            "choices": [
+              "An amateur license",
+              "Only an email address",
+              "A Morse key"
+            ],
+            "answer": 0,
+            "why": "Internet linking is still amateur radio. IRLP and EchoLink require a license, and the usual identification rules still apply."
+          }
+        },
+        {
+          "id": "sight",
+          "title": "Why VHF stops at the hill",
+          "minutes": 4,
+          "lead": "2 meters and 70 centimeters usually travel like light. They go until something is in the way.",
+          "points": [
+            "This is line of sight. A hill, a building, or the curve of the earth ends the contact.",
+            "The radio horizon is a little farther than the visual horizon, about 15 percent, because the air bends the wave slightly.",
+            "Height helps more than power. That is why the repeater is on the hill.",
+            "Leaves and buildings absorb some of the signal. A clear path is a better path."
+          ],
+          "check": {
+            "prompt": "VHF and UHF signals normally…",
+            "choices": [
+              "Travel by line of sight",
+              "Bounce around the world all day",
+              "Only work indoors"
+            ],
+            "answer": 0,
+            "why": "VHF and UHF are line-of-sight bands. Range grows when the antenna is higher. The radio horizon is a bit farther than what your eyes see."
+          }
+        },
+        {
+          "id": "sky",
+          "title": "The sky that brings HF back",
+          "minutes": 4,
+          "lead": "HF can reach past the horizon because a layer of the upper atmosphere bends it back to earth.",
+          "points": [
+            "That layer is the ionosphere. The bend is called skip, or skywave.",
+            "It changes with the time of day. Lower HF is often better at night. Higher HF is often better in the daytime.",
+            "The sun runs an 11 year cycle. More sunspots usually means the higher HF bands reach farther.",
+            "VHF almost always punches through the ionosphere instead of bouncing. That is why your handheld does not talk to other countries by itself."
+          ],
+          "check": {
+            "prompt": "What lets an HF signal return to earth far away?",
+            "choices": [
+              "The ionosphere",
+              "A repeater on every hill",
+              "The rubber duck antenna"
+            ],
+            "answer": 0,
+            "why": "The ionosphere refracts HF back down. More sunspots, on an 11 year cycle, usually help the higher HF bands."
+          }
+        },
+        {
+          "id": "oddpaths",
+          "title": "The surprise long paths",
+          "minutes": 4,
+          "lead": "Sometimes VHF goes much farther than the next hill. The test expects you to know the names.",
+          "points": [
+            "Sporadic E is a patchy layer that can carry 6 meters and even 2 meters hundreds of miles, often in summer.",
+            "A tropospheric duct is a weather layer that pipes VHF and UHF along, sometimes for a few hundred miles.",
+            "Knife-edge diffraction is the wave bending over a sharp ridge, so it is heard on the far side.",
+            "Picket fencing is the rapid flutter you hear in a moving car when the signal arrives by several paths at once."
+          ],
+          "check": {
+            "prompt": "Rapid flutter while you are driving is called…",
+            "choices": [
+              "Picket fencing",
+              "Sporadic E",
+              "A band plan"
+            ],
+            "answer": 0,
+            "why": "Picket fencing is mobile flutter from multipath. Sporadic E, ducting, and knife-edge diffraction are the long or over-the-ridge paths."
+          }
+        },
+        {
+          "id": "poles",
+          "title": "Hold the antenna the same way",
+          "minutes": 3,
+          "lead": "A signal has a direction to its electric field. Your antenna should match it.",
+          "points": [
+            "A vertical antenna makes a vertically polarized wave. Repeaters and handhelds use vertical.",
+            "Hold the handheld upright. Laying it down can drop the signal a great deal.",
+            "Many weak-signal stations on SSB use horizontal antennas. Matching still matters.",
+            "The test is not asking you to calculate the field. It is asking you to point the antenna the same way as the station you want."
+          ],
+          "check": {
+            "prompt": "FM repeaters usually expect your antenna to be…",
+            "choices": [
+              "Vertical",
+              "Lying flat",
+              "Pointed at the ground"
+            ],
+            "answer": 0,
+            "why": "Repeater antennas are vertical. Hold the handheld upright so your polarization matches."
+          }
+        },
+        {
+          "id": "antenna",
+          "title": "The antenna does the leaving",
+          "minutes": 4,
+          "lead": "The radio makes the signal. The antenna lets it go, and lets other signals in.",
+          "points": [
+            "A rubber duck on a handheld is convenient and a poor radiator. It is fine for learning in the neighborhood.",
+            "Height and a clear view often matter more than turning the power up.",
+            "The cable between the radio and the antenna is usually coax. It is a hose for the signal. Keep outdoor joints dry.",
+            "A wire that could fall onto a power line is in the wrong place. Look up before you put anything in the air."
+          ],
+          "check": {
+            "prompt": "What is the antenna's job?",
+            "choices": [
+              "To let the radio wave leave and arrive",
+              "To replace the license",
+              "To raise the volume of the speaker"
+            ],
+            "answer": 0,
+            "why": "The antenna couples the radio to the air. Volume is only the speaker. The license is still required."
+          }
+        },
+        {
+          "id": "wires",
+          "title": "A dipole and a vertical",
+          "minutes": 5,
+          "lead": "Two antennas cover most of the test. Both are cut to a fraction of the wavelength.",
+          "points": [
+            "A half-wave dipole is fed in the middle. Each side is a quarter wave. Length in feet is about 468 divided by the frequency in MHz.",
+            "At 146 MHz, 468 ÷ 146 is about 3.2 feet. That is a 2 meter half-wave dipole.",
+            "A quarter-wave vertical is about 234 divided by the frequency in MHz. It needs radials or a car body as the other half.",
+            "A loading coil lets you use a shorter antenna. The coil makes it look longer electrically. A 5/8 wave vertical is a common, efficient mobile antenna."
+          ],
+          "check": {
+            "prompt": "The length of a half-wave dipole, in feet, is about…",
+            "choices": [
+              "468 divided by the frequency in MHz",
+              "468 times the frequency",
+              "234 times the band name"
+            ],
+            "answer": 0,
+            "why": "Dipole feet ≈ 468 ÷ MHz. A quarter-wave vertical is about 234 ÷ MHz, and it needs a ground plane."
+          }
+        },
+        {
+          "id": "yagi",
+          "title": "A beam that points",
+          "minutes": 4,
+          "lead": "A Yagi puts more of your signal in one direction. The extra is taken from the other directions.",
+          "points": [
+            "The element connected to the cable is the driven element.",
+            "The reflector is a bit longer and sits behind it. The directors are a bit shorter and sit in front.",
+            "Gain does not create power. It concentrates it. Front-to-back ratio tells you how well it ignores what is behind it.",
+            "You point it at the station you want. That is also how a fox hunt finds a hidden transmitter."
+          ],
+          "check": {
+            "prompt": "On a Yagi, the reflector is…",
+            "choices": [
+              "A bit longer than the driven element, and behind it",
+              "The cable",
+              "Shorter, and in front"
+            ],
+            "answer": 0,
+            "why": "The reflector is slightly longer and behind the driven element. Directors are slightly shorter and in front. Gain is concentrated power, not new power."
+          }
+        }
+      ],
+      "pass": 6,
+      "quiz": [
+        {
+          "prompt": "VHF and UHF signals normally travel…",
+          "choices": [
+            "Line of sight",
+            "Around the world on the first hop",
+            "Only at night"
+          ],
+          "answer": 0,
+          "why": "They go in a straight line and stop at hills, buildings, and the horizon. Height helps more than power."
+        },
+        {
+          "prompt": "The length of a half-wave dipole in feet is about…",
+          "choices": [
+            "468 divided by frequency in MHz",
+            "234 divided by frequency",
+            "Any length is fine"
+          ],
+          "answer": 0,
+          "why": "468 / MHz for a half-wave dipole. Quarter-wave vertical is half of that."
+        },
+        {
+          "prompt": "A Yagi antenna…",
+          "choices": [
+            "Points in one direction and has gain",
+            "Radiates equally in all directions",
+            "Is only for HF"
+          ],
+          "answer": 0,
+          "why": "A beam (Yagi) focuses the signal. You aim it at the station or repeater you want."
+        },
+        {
+          "prompt": "Polarization means…",
+          "choices": [
+            "Whether the antenna is vertical or horizontal",
+            "The color of the wire",
+            "The tone frequency"
+          ],
+          "answer": 0,
+          "why": "Hold your antenna the same way the other station does. Most VHF/UHF is vertical."
+        },
+        {
+          "prompt": "HF signals can travel farther because of…",
+          "choices": [
+            "Reflection from the ionosphere",
+            "Bigger batteries",
+            "Shorter antennas"
+          ],
+          "answer": 0,
+          "why": "The sky brings HF back down. VHF and UHF mostly do not get that help."
+        },
+        {
+          "prompt": "FM is commonly used on…",
+          "choices": [
+            "2 meters and 70 centimeters",
+            "Only 80 meters",
+            "Only Morse frequencies"
+          ],
+          "answer": 0,
+          "why": "FM is the usual mode for local VHF/UHF repeaters and simplex."
+        },
+        {
+          "prompt": "A digital mode like APRS is used for…",
+          "choices": [
+            "Position and short messages",
+            "High-power voice",
+            "Replacing the license"
+          ],
+          "answer": 0,
+          "why": "APRS sends location and brief data. Digital voice and satellites are also on the exam."
+        },
+        {
+          "prompt": "The antenna is the part that…",
+          "choices": [
+            "Turns the radio’s signal into a wave in the air",
+            "Stores the license",
+            "Sets the squelch"
+          ],
+          "answer": 0,
+          "why": "The radio makes the signal. The antenna radiates it. A better antenna often beats more power."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Electricity and the station",
+      "about": "Volts, ohms, watts, parts, coax, SWR, and safety. The numbers and the pictures that appear on the test.",
+      "outcomes": [
+        "Use Ohm’s law.",
+        "Read a schematic symbol.",
+        "Keep a wire off a power line."
+      ],
+      "minutes": 90,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "acdc",
+          "title": "A battery, and the wall",
+          "minutes": 3,
+          "lead": "Some electricity stays in one direction. Some of it reverses, over and over.",
+          "points": [
+            "A battery is direct current, DC. The push keeps the same sign. Electrons drift one way.",
+            "A wall outlet and a radio wave are alternating current, AC. The push reverses. A radio wave does it millions or billions of times a second.",
+            "Frequency is how often that reversal completes a full cycle. House power in the United States is 60 Hz. A 146 MHz signal does it 146 million times a second.",
+            "The AC/DC lab in this app draws both. Use it after this lesson, not before."
+          ],
+          "check": {
+            "prompt": "A battery produces…",
+            "choices": [
+              "Direct current",
+              "A radio license",
+              "60 Hz house power"
+            ],
+            "answer": 0,
+            "why": "A battery is DC, one direction. House outlets reverse 60 times a second. That reversal is AC."
+          }
+        },
+        {
+          "id": "ladder",
+          "title": "The thousand ladder",
+          "minutes": 4,
+          "lead": "The metric prefixes are nicknames for thousands, so a number can stay short.",
+          "points": [
+            "Kilo means thousand. Mega means million. Giga means billion.",
+            "Milli means thousandth. Micro means millionth. Nano means billionth. Pico means trillionth.",
+            "1,500 kHz is 1.5 MHz. 500 milliwatts is 0.5 watts. 3,500,000 Hz is 3.5 MHz.",
+            "There are 1,000 picofarads in a nanofarad, and 1,000 nanofarads in a microfarad. The Metrics lab will walk the ladder with you."
+          ],
+          "check": {
+            "prompt": "1,500 kHz is the same as…",
+            "choices": [
+              "1.5 MHz",
+              "1.5 Hz",
+              "1,500 MHz"
+            ],
+            "answer": 0,
+            "why": "Kilo is thousand and mega is million, so you move three places. 1,500 kHz is 1.5 MHz."
+          }
+        },
+        {
+          "id": "ohm",
+          "title": "Ohm’s law",
+          "minutes": 5,
+          "lead": "Three letters. Cover the one you need. The picture is still push, flow, and squeeze.",
+          "points": [
+            "E is voltage in volts. I is current in amps. R is resistance in ohms.",
+            "E = I × R. The push equals the flow times the squeeze.",
+            "I = E ÷ R. A 12 volt battery across 4 ohms gives 3 amps.",
+            "R = E ÷ I. If 12 volts pushes 1.5 amps, the resistance is 8 ohms. The Ohm lab draws this."
+          ],
+          "check": {
+            "prompt": "12 volts across 4 ohms. How much current?",
+            "choices": [
+              "3 amps",
+              "48 amps",
+              "0.3 amps"
+            ],
+            "answer": 0,
+            "why": "Current is voltage divided by resistance. 12 ÷ 4 = 3 amps."
+          }
+        },
+        {
+          "id": "watts",
+          "title": "Power",
+          "minutes": 4,
+          "lead": "Power is how fast the energy is used. The unit is the watt.",
+          "points": [
+            "P = E × I. Push times flow.",
+            "13.8 volts times 10 amps is 138 watts. That is a real radio-sized example.",
+            "If you know current and resistance, P = I × I × R. If you know voltage and resistance, P = E × E ÷ R.",
+            "You only need the first formula until the others show up in a question. The Power lab will multiply them for you."
+          ],
+          "check": {
+            "prompt": "13.8 volts and 10 amps. How much power?",
+            "choices": [
+              "138 watts",
+              "23.8 watts",
+              "1.38 watts"
+            ],
+            "answer": 0,
+            "why": "Power is voltage times current. 13.8 × 10 = 138 watts."
+          }
+        },
+        {
+          "id": "storage",
+          "title": "Capacitors, coils, and impedance",
+          "minutes": 4,
+          "lead": "Two parts store energy. Impedance is the squeeze when the current is alternating.",
+          "points": [
+            "A capacitor stores energy in an electric field. The unit is the farad. A handheld will see microfarads or picofarads, never a whole farad.",
+            "An inductor, a coil, stores energy in a magnetic field. The unit is the henry.",
+            "Impedance is the opposition to AC, measured in ohms, like resistance. The letter is often Z.",
+            "Metals conduct because they have many free electrons. Glass, rubber, and ceramic are insulators."
+          ],
+          "check": {
+            "prompt": "A capacitor stores energy in…",
+            "choices": [
+              "An electric field",
+              "A magnetic field",
+              "The license database"
+            ],
+            "answer": 0,
+            "why": "Capacitors store energy in an electric field, in farads. Inductors store it in a magnetic field, in henries."
+          }
+        },
+        {
+          "id": "parts",
+          "title": "Resistor, capacitor, coil",
+          "minutes": 4,
+          "lead": "These three show up on almost every schematic in the book.",
+          "points": [
+            "A resistor opposes current and turns some energy into heat. A potentiometer is a resistor you can turn.",
+            "A capacitor is two plates that store a charge. It can pass a changing current and block a steady one.",
+            "An inductor is a coil. It resists a change in current.",
+            "A transformer is two coils sharing a magnetic field. It changes voltage and can match impedance."
+          ],
+          "check": {
+            "prompt": "A potentiometer is…",
+            "choices": [
+              "A variable resistor",
+              "A kind of antenna",
+              "A fuse"
+            ],
+            "answer": 0,
+            "why": "A potentiometer is a resistor with a movable contact. A transformer is the pair of coils that changes voltage."
+          }
+        },
+        {
+          "id": "semis",
+          "title": "Diodes, transistors, relays",
+          "minutes": 4,
+          "lead": "These parts decide whether current goes, and how much.",
+          "points": [
+            "A diode lets current flow one way. The symbol is a triangle pointing at a bar. The bar is the cathode.",
+            "An LED is a diode that makes light. A rectifier diode turns AC into DC.",
+            "A transistor can amplify or switch. A bipolar transistor is controlled by current. A field-effect transistor is controlled by voltage.",
+            "A relay is a switch pulled in by an electromagnet, so a small current can turn on a big one."
+          ],
+          "check": {
+            "prompt": "A diode is used to…",
+            "choices": [
+              "Let current pass in one direction",
+              "Store energy in a magnetic field",
+              "Identify your station"
+            ],
+            "answer": 0,
+            "why": "A diode conducts one way. An LED lights. A rectifier makes DC from AC. A transistor amplifies or switches."
+          }
+        },
+        {
+          "id": "schematic",
+          "title": "Reading a schematic",
+          "minutes": 4,
+          "lead": "A schematic is a map of connections, not a picture of the parts.",
+          "points": [
+            "A zigzag is a resistor. Two parallel plates are a capacitor. A coil of loops is an inductor.",
+            "A diode is a triangle against a bar. A transistor has three leads, and an arrow on one of them.",
+            "A battery is a long line and a short line. The long line is positive. Ground is a set of lines like a rake, or a triangle.",
+            "A switch is a break you can close. A fuse is a thin link that opens when the current is too high. An antenna is a triangle or a set of branches."
+          ],
+          "check": {
+            "prompt": "On a battery symbol, the long line is…",
+            "choices": [
+              "Positive",
+              "Always the fuse",
+              "The antenna"
+            ],
+            "answer": 0,
+            "why": "The long line is positive and the short line is negative. A zigzag is a resistor. Two plates are a capacitor."
+          }
+        },
+        {
+          "id": "receiver",
+          "title": "What makes a receiver good",
+          "minutes": 3,
+          "lead": "Two words describe a receiver. You will see both on the test.",
+          "points": [
+            "Sensitivity is how weak a signal it can still hear.",
+            "Selectivity is how well it ignores stations on nearby frequencies.",
+            "An S meter shows how strong the received signal is. It does not show your transmit power.",
+            "A transceiver is a transmitter and a receiver in one box. Most ham radios are transceivers."
+          ],
+          "check": {
+            "prompt": "Selectivity means the receiver can…",
+            "choices": [
+              "Separate the station you want from one nearby",
+              "Run on 1500 watts",
+              "Measure resistance"
+            ],
+            "answer": 0,
+            "why": "Selectivity rejects neighbors on the dial. Sensitivity hears weak signals. The S meter reports received strength."
+          }
+        },
+        {
+          "id": "bench",
+          "title": "Power, meters, and solder",
+          "minutes": 4,
+          "lead": "A few bench habits keep the radio, and you, out of trouble.",
+          "points": [
+            "Most mobile radios want about 13.8 volts DC. A regulator holds that voltage steady while the load changes.",
+            "A voltmeter goes across a part, in parallel. An ammeter goes in the path, in series. Measure resistance only with the power off.",
+            "Use rosin-core solder for electronics. Acid-core solder belongs nowhere near a radio. It eats the joint.",
+            "A dull, grainy joint is a bad solder joint. A good one is shiny and smooth."
+          ],
+          "check": {
+            "prompt": "Which solder is for radios?",
+            "choices": [
+              "Rosin core",
+              "Acid core",
+              "Either one"
+            ],
+            "answer": 0,
+            "why": "Rosin core. Acid core corrodes electronics. Measure ohms with the power off, and feed a mobile radio about 13.8 volts."
+          }
+        },
+        {
+          "id": "swr",
+          "title": "SWR, a tuner, and a dummy load",
+          "minutes": 4,
+          "lead": "The radio wants to see a certain load, usually 50 ohms. SWR is how close you came.",
+          "points": [
+            "An SWR of 1 to 1 means a match. A high SWR means some power is reflected back. That can overheat the radio’s final amplifier.",
+            "Many radios protect themselves by reducing power when the SWR is high. The contact gets worse, which is the radio saving itself.",
+            "An antenna tuner matches the impedance at the radio. It does not make a bad antenna into a good one, but it lets the radio deliver power.",
+            "A dummy load is a shielded 50 ohm resistor. You transmit into it to test the radio without putting a signal on the air."
+          ],
+          "check": {
+            "prompt": "A dummy load is for…",
+            "choices": [
+              "Testing a transmitter without radiating",
+              "Raising the antenna",
+              "Measuring a battery’s license class"
+            ],
+            "answer": 0,
+            "why": "A dummy load absorbs the power so you can test. An SWR of 1:1 is a match. A tuner makes the radio happy. It does not fix the antenna by itself."
+          }
+        },
+        {
+          "id": "coax",
+          "title": "The cable",
+          "minutes": 4,
+          "lead": "Coax is the hose between the radio and the antenna. It is not all the same.",
+          "points": [
+            "Most ham coax is 50 ohms. It has a center conductor, insulation, and a shield.",
+            "Loss turns power into heat in the cable. Loss grows as the frequency goes up, and as the cable gets longer.",
+            "Water inside coax raises the loss. Seal outdoor connectors. A wet cable can look fine and still be ruining the signal.",
+            "A handheld often uses an SMA connector. A mobile cable often uses a PL-259. Type N is sturdy and common at UHF."
+          ],
+          "check": {
+            "prompt": "Coax loss gets worse when…",
+            "choices": [
+              "The frequency is higher, or water gets in",
+              "You identify more often",
+              "The license is renewed"
+            ],
+            "answer": 0,
+            "why": "Higher frequency, longer cable, and moisture all increase loss. Most ham feed line is 50 ohm coax."
+          }
+        },
+        {
+          "id": "rfi",
+          "title": "When the radio bothers someone",
+          "minutes": 4,
+          "lead": "Interference has a direction. The cure depends on who is hearing what.",
+          "points": [
+            "Harmonics are copies of your signal at 2 times, 3 times, the frequency. A low-pass filter at your transmitter reduces them.",
+            "Fundamental overload is different. Your real signal is so strong that a nearby radio or telephone cannot cope. A band-reject filter at the affected device, or less power, is the fix.",
+            "A snap-on ferrite on a cable blocks radio energy that is riding in on the wire.",
+            "A whine in the mobile speaker that rises with the engine is alternator noise. It comes in on the power leads."
+          ],
+          "check": {
+            "prompt": "A low-pass filter at the transmitter is used to reduce…",
+            "choices": [
+              "Harmonics",
+              "The need for a license",
+              "Alternator whine in a parked car"
+            ],
+            "answer": 0,
+            "why": "Harmonics are your problem to filter, at your radio. Overload of a neighbor’s set is a different problem, usually fixed at their end or by using less power."
+          }
+        },
+        {
+          "id": "safe",
+          "title": "The dangers that are real",
+          "minutes": 4,
+          "lead": "The test has a safety section because a few mistakes hurt people. They are ordinary mistakes.",
+          "points": [
+            "Power lines are the serious one. Assume every line is live. Do not pull a wire off a line. Call the power company.",
+            "If someone is being shocked, do not grab them. Turn the power off, or move the wire with something dry that is not metal.",
+            "A car battery, or a ring across its terminals, can burn you. A capacitor inside a power supply can shock you after the radio is unplugged.",
+            "Use the least power that works. FM stays on the whole time you transmit, so it counts more than a casual voice contact."
+          ],
+          "check": {
+            "prompt": "An antenna wire is touching a power line. What do you do?",
+            "choices": [
+              "Stay away and call the power company",
+              "Pull it off with your hands",
+              "Turn the radio's volume up so you can hear the line"
+            ],
+            "answer": 0,
+            "why": "You do not touch it and you do not pull it. The line can kill you. The power company is who clears it."
+          }
+        },
+        {
+          "id": "exposure",
+          "title": "RF exposure",
+          "minutes": 4,
+          "lead": "Your body can absorb radio energy. The rule is to know whether your station is within the limits.",
+          "points": [
+            "You must be able to show that people are not exposed to more RF than the FCC allows. Many small stations qualify for an exemption. If you do not, you evaluate.",
+            "A controlled area is you and your household, who know the station is there. An uncontrolled area is a neighbor or the sidewalk. The public limit is stricter.",
+            "FM and many digital modes stay on the whole time you transmit, so they count more than ordinary SSB voice. More power, more duty cycle, closer people, and more antenna gain all raise exposure.",
+            "If you change power, antenna, or how you operate, you check the evaluation again. A few watts on a handheld is rarely the problem. A beam pointed at a neighbor’s window can be."
+          ],
+          "check": {
+            "prompt": "Which raises RF exposure the most, all else equal?",
+            "choices": [
+              "A mode that transmits continuously, at higher power, close to people",
+              "Saying your call sign more clearly",
+              "Using a dummy load in a shielded can"
+            ],
+            "answer": 0,
+            "why": "Power, duty cycle, distance, frequency, and antenna gain decide exposure. Re-check when the station changes. The public limit is stricter than the one for your own household."
+          }
+        },
+        {
+          "id": "shop",
+          "title": "Lightning, batteries, towers, fuses",
+          "minutes": 5,
+          "lead": "The last safety lesson is the shop and the tower, not the math.",
+          "points": [
+            "Disconnect the antenna from the radio when a storm is close. Ground the mast to a ground rod, and bond that ground to the house electrical ground. Never use a gas pipe as a ground.",
+            "A lead-acid battery gives off hydrogen. Ventilate it, and keep sparks away. A short across the terminals can burn you. Take off metal rings.",
+            "The fuse for a mobile radio goes in the positive lead, close to the battery. Use the size the radio maker asks for. A bigger fuse is not safer.",
+            "The green wire in house wiring is the safety ground. On a tower, use a harness, do not climb alone, and stay off it in a storm or near a power line."
+          ],
+          "check": {
+            "prompt": "Where does the fuse for a mobile radio go?",
+            "choices": [
+              "In the positive lead, close to the battery",
+              "In the antenna connector",
+              "It can be left out if the radio is new"
+            ],
+            "answer": 0,
+            "why": "Fuse the positive lead near the battery, at the rated size. Vent a lead-acid battery. Bond grounds together. Climb a tower with a harness and a partner."
+          }
+        }
+      ],
+      "pass": 6,
+      "quiz": [
+        {
+          "prompt": "Electrical current is measured in which of the following units?",
+          "choices": [
+            "Volts",
+            "Watts",
+            "Ohms",
+            "Amperes"
+          ],
+          "answer": 3,
+          "why": "Current is the flow. We measure flow in amperes. Volts are the push, ohms are the squeeze, watts are the work being done."
+        },
+        {
+          "prompt": "Electrical power is measured in which of the following units?",
+          "choices": [
+            "Volts",
+            "Watts",
+            "Watt-hours",
+            "Amperes"
+          ],
+          "answer": 1,
+          "why": "Power is how fast energy is being used. The unit is the watt. Watt-hours measure energy over time, not the rate."
+        },
+        {
+          "prompt": "What is the name for the flow of electrons in an electric circuit?",
+          "choices": [
+            "Voltage",
+            "Resistance",
+            "Capacitance",
+            "Current"
+          ],
+          "answer": 3,
+          "why": "Electrons moving is current. Voltage is what pushes them. Resistance is what holds them back."
+        },
+        {
+          "prompt": "What is the electrical term for the force that causes electron flow?",
+          "choices": [
+            "Voltage",
+            "Ampere-hours",
+            "Capacitance",
+            "Inductance"
+          ],
+          "answer": 0,
+          "why": "Voltage is the push — electromotive force. No push, no flow."
+        },
+        {
+          "prompt": "What are the units of electrical resistance?",
+          "choices": [
+            "Siemens",
+            "Mhos",
+            "Ohms",
+            "Coulombs"
+          ],
+          "answer": 2,
+          "why": "Resistance is measured in ohms. On the exam, the symbol is the Greek omega (Ω)."
+        },
+        {
+          "prompt": "Ohm’s law says voltage equals…",
+          "choices": [
+            "Current times resistance",
+            "Current divided by resistance",
+            "Power times resistance"
+          ],
+          "answer": 0,
+          "why": "E = I × R. The push equals the flow times the squeeze."
+        },
+        {
+          "prompt": "A high SWR usually means…",
+          "choices": [
+            "The antenna system is not matched",
+            "The battery is full",
+            "You should raise power"
+          ],
+          "answer": 0,
+          "why": "High SWR means power is reflected back. Check the antenna, coax, and connections. Use a dummy load to test the radio alone."
+        },
+        {
+          "prompt": "Coax is used because…",
+          "choices": [
+            "It keeps the signal inside the cable",
+            "It is cheaper than wire",
+            "It replaces the antenna"
+          ],
+          "answer": 0,
+          "why": "Coaxial cable carries the signal from radio to antenna with the shield keeping it contained."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "The practice exam",
+      "about": "35 questions drawn from the pool. 26 to pass. Then a short checklist for the real session.",
+      "outcomes": [
+        "Sit a full practice exam.",
+        "Know what to bring.",
+        "See which weeks to review."
+      ],
+      "minutes": 60,
+      "ready": true,
+      "lectures": [
+        {
+          "id": "exam-day",
+          "title": "What test day looks like",
+          "minutes": 4,
+          "lead": "The test is smaller than the book. You sit with volunteer examiners, not at a government office.",
+          "points": [
+            "35 multiple-choice questions. You need 26 right. You may miss 9.",
+            "Bring a photo ID and the fee the session lists. A pencil is usually provided. Calculators are often allowed if they have no stored text.",
+            "You find out if you passed before you leave. The FCC call sign usually shows in the database within a few days. You wait for that before you transmit.",
+            "Sessions are run by local clubs. Search “ARRL exam session” plus your city when you are ready. You do not need to book one in week 1."
+          ],
+          "check": {
+            "prompt": "Where do you take the Technician exam?",
+            "choices": [
+              "At a volunteer examiner session, usually run by a local club",
+              "At an FCC office",
+              "Online, with no one watching"
+            ],
+            "answer": 0,
+            "why": "Volunteer examiners give the test. You do not go to a government office. The call sign arrives after you pass, not the same minute."
+          }
+        }
+      ],
+      "pass": 26,
+      "quiz": [
+        {
+          "prompt": "Electrical current is measured in which of the following units?",
+          "choices": [
+            "Volts",
+            "Watts",
+            "Ohms",
+            "Amperes"
+          ],
+          "answer": 3,
+          "why": "Current is the flow. We measure flow in amperes. Volts are the push, ohms are the squeeze, watts are the work being done."
+        },
+        {
+          "prompt": "Electrical power is measured in which of the following units?",
+          "choices": [
+            "Volts",
+            "Watts",
+            "Watt-hours",
+            "Amperes"
+          ],
+          "answer": 1,
+          "why": "Power is how fast energy is being used. The unit is the watt. Watt-hours measure energy over time, not the rate."
+        },
+        {
+          "prompt": "What is the name for the flow of electrons in an electric circuit?",
+          "choices": [
+            "Voltage",
+            "Resistance",
+            "Capacitance",
+            "Current"
+          ],
+          "answer": 3,
+          "why": "Electrons moving is current. Voltage is what pushes them. Resistance is what holds them back."
+        },
+        {
+          "prompt": "What is the electrical term for the force that causes electron flow?",
+          "choices": [
+            "Voltage",
+            "Ampere-hours",
+            "Capacitance",
+            "Inductance"
+          ],
+          "answer": 0,
+          "why": "Voltage is the push — electromotive force. No push, no flow."
+        },
+        {
+          "prompt": "What are the units of electrical resistance?",
+          "choices": [
+            "Siemens",
+            "Mhos",
+            "Ohms",
+            "Coulombs"
+          ],
+          "answer": 2,
+          "why": "Resistance is measured in ohms. On the exam, the symbol is the Greek omega (Ω)."
+        },
+        {
+          "prompt": "What is the unit of frequency?",
+          "choices": [
+            "Hertz",
+            "Henry",
+            "Farad",
+            "Tesla"
+          ],
+          "answer": 0,
+          "why": "Frequency counts complete cycles per second. That unit is the hertz. The henry is inductance. The farad is capacitance."
+        },
+        {
+          "prompt": "Why are metals generally good conductors of electricity?",
+          "choices": [
+            "They have relatively high density",
+            "They have many free electrons",
+            "They have many free protons",
+            "All these choices are correct"
+          ],
+          "answer": 1,
+          "why": "Metals have electrons that are free to wander. Those loose electrons are what carry current."
+        },
+        {
+          "prompt": "Which of the following is a good electrical insulator?",
+          "choices": [
+            "Copper",
+            "Glass",
+            "Aluminum",
+            "Mercury"
+          ],
+          "answer": 1,
+          "why": "Glass holds its electrons tight, so current barely flows. Copper, aluminum, and mercury are metals — they conduct."
+        },
+        {
+          "prompt": "Which of the following describes alternating current?",
+          "choices": [
+            "Current that alternates between a positive direction and zero",
+            "Current that alternates between a negative direction and zero",
+            "Current that alternates between positive and negative directions",
+            "All these answers are correct"
+          ],
+          "answer": 2,
+          "why": "AC reverses. It flows one way, then the other. That full reversal is what “alternating” means."
+        },
+        {
+          "prompt": "What describes the number of times per second that an alternating current makes a complete cycle?",
+          "choices": [
+            "Pulse rate",
+            "Speed",
+            "Wavelength",
+            "Frequency"
+          ],
+          "answer": 3,
+          "why": "One back-and-forth is one cycle. How many of those happen each second is the frequency, in hertz."
+        },
+        {
+          "prompt": "What type of current flow is opposed by resistance?",
+          "choices": [
+            "Direct current",
+            "Alternating current",
+            "RF current",
+            "All these choices are correct"
+          ],
+          "answer": 3,
+          "why": "Resistance fights flow no matter the flavor: steady DC, reversing AC, or radio-frequency current."
+        },
+        {
+          "prompt": "How many milliamperes is 1.5 amperes?",
+          "choices": [
+            "15 milliamperes",
+            "150 milliamperes",
+            "1,500 milliamperes",
+            "15,000 milliamperes"
+          ],
+          "answer": 2,
+          "why": "Milli means thousandth. One ampere is 1,000 milliamperes, so 1.5 A is 1,500 mA. Move the decimal three places."
+        },
+        {
+          "prompt": "Which is equal to 1,500,000 hertz?",
+          "choices": [
+            "1,500 kHz",
+            "1,500 MHz",
+            "15 GHz",
+            "150 kHz"
+          ],
+          "answer": 0,
+          "why": "Kilo means thousand. 1,500,000 Hz ÷ 1,000 = 1,500 kHz. That is also 1.5 MHz, which is not one of the wrong-looking big options."
+        },
+        {
+          "prompt": "Which is equal to one kilovolt?",
+          "choices": [
+            "One one-thousandth of a volt",
+            "One hundred volts",
+            "One thousand volts",
+            "One million volts"
+          ],
+          "answer": 2,
+          "why": "Kilo always means ×1,000. One kilovolt is 1,000 volts. A thousandth of a volt would be a millivolt."
+        },
+        {
+          "prompt": "Which is equal to one microvolt?",
+          "choices": [
+            "One one-millionth of a volt",
+            "One million volts",
+            "One thousand kilovolts",
+            "One one-thousandth of a volt"
+          ],
+          "answer": 0,
+          "why": "Micro means one millionth. A microvolt is a tiny fraction of a volt. A million volts would be a megavolt."
+        },
+        {
+          "prompt": "Which is equal to 500 milliwatts?",
+          "choices": [
+            "0.02 watts",
+            "0.5 watts",
+            "5 watts",
+            "50 watts"
+          ],
+          "answer": 1,
+          "why": "1,000 milliwatts = 1 watt. Half of that, 500 mW, is 0.5 watts."
+        },
+        {
+          "prompt": "Which is equal to 3,000 milliamperes?",
+          "choices": [
+            "0.003 amperes",
+            "0.3 amperes",
+            "3,000,000 amperes",
+            "3 amperes"
+          ],
+          "answer": 3,
+          "why": "Divide milliamperes by 1,000 to get amperes. 3,000 ÷ 1,000 = 3 A."
+        },
+        {
+          "prompt": "Which is equal to 3.525 MHz?",
+          "choices": [
+            "0.003525 kHz",
+            "35.25 kHz",
+            "3,525 kHz",
+            "3,525,000 kHz"
+          ],
+          "answer": 2,
+          "why": "One megahertz is 1,000 kilohertz. 3.525 × 1,000 = 3,525 kHz."
+        },
+        {
+          "prompt": "Which is equal to 28,400 kHz?",
+          "choices": [
+            "28.400 kHz",
+            "2.800 MHz",
+            "284.00 MHz",
+            "28.400 MHz"
+          ],
+          "answer": 3,
+          "why": "Divide kilohertz by 1,000 to get megahertz. 28,400 ÷ 1,000 = 28.400 MHz. That is the 10-meter band."
+        },
+        {
+          "prompt": "Which is equal to 2,425 MHz?",
+          "choices": [
+            "0.002425 GHz",
+            "24.25 GHz",
+            "2.425 GHz",
+            "2,425 GHz"
+          ],
+          "answer": 2,
+          "why": "One gigahertz is 1,000 megahertz. 2,425 ÷ 1,000 = 2.425 GHz."
+        },
+        {
+          "prompt": "Which is equal to 1,000,000 picofarads?",
+          "choices": [
+            "0.001 microfarads",
+            "1 microfarad",
+            "1,000 microfarads",
+            "1,000,000,000 microfarads"
+          ],
+          "answer": 1,
+          "why": "Pico to micro is two ladder steps (pico → nano → micro), so divide by 1,000,000. 1,000,000 pF = 1 µF."
+        },
+        {
+          "prompt": "Which decibel value most closely represents a power increase from 5 watts to 10 watts?",
+          "choices": [
+            "2 dB",
+            "3 dB",
+            "5 dB",
+            "10 dB"
+          ],
+          "answer": 1,
+          "why": "Power doubled. A doubling of power is about +3 dB. Ten times the power would be +10 dB."
+        },
+        {
+          "prompt": "Which decibel value most closely represents a power decrease from 12 watts to 3 watts?",
+          "choices": [
+            "−1 dB",
+            "−3 dB",
+            "−6 dB",
+            "−9 dB"
+          ],
+          "answer": 2,
+          "why": "12 W down to 3 W is one quarter of the power. Half would be −3 dB; half again (a quarter) is about −6 dB."
+        },
+        {
+          "prompt": "Which decibel value represents a power increase from 20 watts to 200 watts?",
+          "choices": [
+            "10 dB",
+            "12 dB",
+            "18 dB",
+            "28 dB"
+          ],
+          "answer": 0,
+          "why": "200 is 20 × 10. Multiplying power by ten is +10 dB."
+        },
+        {
+          "prompt": "What is the formula used to calculate electrical power (P) in a DC circuit?",
+          "choices": [
+            "P = E × I",
+            "P = E / I",
+            "P = E − I",
+            "P = E + I"
+          ],
+          "answer": 0,
+          "why": "Power is push times flow. The letter E stands for voltage. P = E × I."
+        },
+        {
+          "prompt": "How much power is delivered by a voltage of 13.8 volts DC and a current of 10 amperes?",
+          "choices": [
+            "138 watts",
+            "0.7 watts",
+            "23.8 watts",
+            "3.8 watts"
+          ],
+          "answer": 0,
+          "why": "13.8 × 10 = 138 watts. This is a common mobile-radio supply voltage, which is why the exam uses it."
+        },
+        {
+          "prompt": "How much power is delivered by a voltage of 12 volts DC and a current of 2.5 amperes?",
+          "choices": [
+            "4.8 watts",
+            "30 watts",
+            "14.5 watts",
+            "0.208 watts"
+          ],
+          "answer": 1,
+          "why": "12 × 2.5 = 30 watts. If you divided instead of multiplying, you would land on a wrong answer."
+        },
+        {
+          "prompt": "How much current is required to deliver 120 watts at a voltage of 12 volts DC?",
+          "choices": [
+            "0.1 amperes",
+            "10 amperes",
+            "12 amperes",
+            "132 amperes"
+          ],
+          "answer": 1,
+          "why": "Current = power ÷ voltage. 120 ÷ 12 = 10 amperes."
+        },
+        {
+          "prompt": "What describes the ability to store energy in an electric field?",
+          "choices": [
+            "Inductance",
+            "Resistance",
+            "Tolerance",
+            "Capacitance"
+          ],
+          "answer": 3,
+          "why": "Capacitance stores energy in an electric field. Inductance stores energy in a magnetic field."
+        },
+        {
+          "prompt": "What is the unit of capacitance?",
+          "choices": [
+            "The farad",
+            "The ohm",
+            "The volt",
+            "The henry"
+          ],
+          "answer": 0,
+          "why": "Capacitance is measured in farads. On the exam you mostly see picofarads and microfarads."
+        },
+        {
+          "prompt": "What describes the ability to store energy in a magnetic field?",
+          "choices": [
+            "Admittance",
+            "Capacitance",
+            "Resistance",
+            "Inductance"
+          ],
+          "answer": 3,
+          "why": "Inductance is magnetic storage. A coil of wire is the usual picture."
+        },
+        {
+          "prompt": "What is the unit of inductance?",
+          "choices": [
+            "The coulomb",
+            "The farad",
+            "The henry",
+            "The ohm"
+          ],
+          "answer": 2,
+          "why": "Inductance is measured in henries. Farads are capacitance. Ohms are resistance or impedance."
+        },
+        {
+          "prompt": "What is impedance?",
+          "choices": [
+            "The opposition to AC current flow",
+            "The inverse of resistance",
+            "The Q or quality factor of a component",
+            "The power handling capability of a component"
+          ],
+          "answer": 0,
+          "why": "Impedance is the squeeze against alternating current. It is still measured in ohms."
+        },
+        {
+          "prompt": "What is the unit of impedance?",
+          "choices": [
+            "The volt",
+            "The ampere",
+            "The coulomb",
+            "The ohm"
+          ],
+          "answer": 3,
+          "why": "Same unit as resistance: the ohm. Impedance just includes the extra opposition that shows up with AC."
+        },
+        {
+          "prompt": "What does the abbreviation \"RF\" mean?",
+          "choices": [
+            "Radio frequency signals of all types",
+            "The resonant frequency of a tuned circuit",
+            "The real frequency transmitted as opposed to the apparent frequency",
+            "Reflective force in antenna transmission lines"
+          ],
+          "answer": 0,
+          "why": "RF means radio frequency — the kind of alternating current that can become a radio wave. It is not a special extra force."
+        }
+      ]
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import {
   Waves,
   Zap,
 } from "lucide-react";
+import { Course } from "@/components/course";
 import { HamClass } from "@/components/ham-class";
 import { SheetLibrary } from "@/components/sheet-library";
 import { TriangleLab } from "@/components/triangle-lab";
@@ -23,7 +24,8 @@ import { WavesLab } from "@/components/waves-lab";
 import { QuizLab } from "@/components/quiz-lab";
 
 const SECTIONS = [
-  { id: "class", label: "Class", icon: BookOpen },
+  { id: "course", label: "Course", icon: BookOpen },
+  { id: "class", label: "Lessons", icon: BookOpen },
   { id: "sheet", label: "Sheets", icon: Printer },
   { id: "bench", label: "Bench", icon: Gauge },
   { id: "triangles", label: "Triangles", icon: Triangle },
@@ -50,7 +52,7 @@ const WORDS = [
 ];
 
 export function StudyBuddy() {
-  const [section, setSection] = useState<SectionId>("class");
+  const [section, setSection] = useState<SectionId>("course");
 
   return (
     <div className="min-h-dvh bg-bg text-fg print:min-h-0 print:bg-paper">
@@ -90,6 +92,7 @@ export function StudyBuddy() {
       <main
         className={`mx-auto px-4 py-5 print:max-w-none print:p-0 ${section === "sheet" ? "max-w-5xl" : "max-w-3xl"}`}
       >
+        {section === "course" ? <Course onOpenLessons={() => setSection("class")} /> : null}
         {section === "class" ? <HamClass onOpenLabs={() => setSection("bench")} /> : null}
         {section === "sheet" ? <SheetLibrary /> : null}
         {section === "bench" ? (

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1016" />
+    <title>Ham Tech Course</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1016;
+        --surface: #141c26;
+        --fg: #e7e2d6;
+        --muted: #8d948a;
+        --primary: #f0b429;
+        --ink: #1a1408;
+        --line: #2a3544;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, sans-serif; }
+      main { max-width: 40rem; margin: 0 auto; padding: 1rem 1rem 3rem; }
+      .kicker { margin: 0; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); font-size: 0.75rem; }
+      h1 { margin: 0.3rem 0 0.6rem; font-size: 1.6rem; }
+      h2 { margin: 0.4rem 0; font-size: 1.2rem; }
+      .card { border: 1px solid var(--line); background: var(--surface); border-radius: 1rem; padding: 1rem; margin-top: 0.8rem; }
+      button, .choice { min-height: 2.75rem; border-radius: 999px; border: 1px solid var(--line); background: #1c2733; color: var(--fg); padding: 0.4rem 1rem; margin: 0.25rem 0.25rem 0.25rem 0; }
+      button.primary { background: var(--primary); color: var(--ink); border-color: var(--primary); font-weight: 600; }
+      .choice.right { border-color: #3dba7a; }
+      .choice.wrong { border-color: #e05a5a; }
+      .muted { color: var(--muted); }
+      li { margin: 0.4rem 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Course</p>
+      <h1 id="title">Loading…</h1>
+      <p id="subtitle" class="muted"></p>
+      <div id="home"></div>
+      <div id="week" hidden></div>
+      <div id="lecture" hidden></div>
+      <div id="quiz" hidden></div>
+    </main>
+    <script>
+      const KEY = "ham-tech-course-phone";
+      let course = null;
+      let progress = { done: [], scores: {} };
+      try { progress = JSON.parse(localStorage.getItem(KEY)) || progress; } catch {}
+
+      function save() { localStorage.setItem(KEY, JSON.stringify(progress)); }
+
+      function show(id) {
+        ["home", "week", "lecture", "quiz"].forEach(el => document.getElementById(el).hidden = el !== id);
+      }
+
+      function renderHome() {
+        document.getElementById("title").textContent = course.title;
+        document.getElementById("subtitle").textContent = course.subtitle;
+        const home = document.getElementById("home");
+        home.replaceChildren();
+        const passed = course.weeks.filter(w => (progress.scores[w.number] || 0) >= w.pass).length;
+        const p = document.createElement("p");
+        p.textContent = passed + " of 6 weeks passed.";
+        home.appendChild(p);
+        course.weeks.forEach(week => {
+          const card = document.createElement("div");
+          card.className = "card";
+          const score = progress.scores[week.number];
+          const status = score >= week.pass ? " · passed" : "";
+          card.innerHTML = `<p class="kicker">Week ${week.number}${status}</p><h2>${week.title}</h2><p class="muted">${week.about}</p><p>${week.minutes} min · ${week.lectures.length} lectures</p>`;
+          const btn = document.createElement("button");
+          btn.className = "primary";
+          btn.textContent = "Open week";
+          btn.onclick = () => renderWeek(week.number);
+          card.appendChild(btn);
+          home.appendChild(card);
+        });
+        show("home");
+      }
+
+      function renderWeek(num) {
+        const week = course.weeks.find(w => w.number === num);
+        const el = document.getElementById("week");
+        el.replaceChildren();
+        el.innerHTML = `<p class="kicker">Week ${week.number}</p><h2>${week.title}</h2><p>${week.about}</p>`;
+        const outcomes = document.createElement("ul");
+        week.outcomes.forEach(o => { const li = document.createElement("li"); li.textContent = o; outcomes.appendChild(li); });
+        el.appendChild(outcomes);
+        week.lectures.forEach((lec, i) => {
+          const done = progress.done.includes(lec.id);
+          const btn = document.createElement("button");
+          btn.textContent = (i + 1) + ". " + lec.title + (done ? " ✓" : "") + " (" + lec.minutes + " min)";
+          btn.onclick = () => renderLecture(week.number, lec.id);
+          el.appendChild(btn);
+        });
+        const quizBtn = document.createElement("button");
+        quizBtn.className = "primary";
+        quizBtn.textContent = "Take the week quiz (" + week.quiz.length + " questions, need " + week.pass + ")";
+        quizBtn.onclick = () => renderQuiz(week.number);
+        el.appendChild(quizBtn);
+        const back = document.createElement("button");
+        back.textContent = "Back to course";
+        back.onclick = renderHome;
+        el.appendChild(back);
+        show("week");
+      }
+
+      function renderLecture(weekNum, lecId) {
+        const week = course.weeks.find(w => w.number === weekNum);
+        const lec = week.lectures.find(l => l.id === lecId);
+        const el = document.getElementById("lecture");
+        el.replaceChildren();
+        el.innerHTML = `<p class="kicker">Week ${week.number} · ${lec.minutes} min</p><h2>${lec.title}</h2><p>${lec.lead}</p>`;
+        const ul = document.createElement("ul");
+        lec.points.forEach(p => { const li = document.createElement("li"); li.textContent = p; ul.appendChild(li); });
+        el.appendChild(ul);
+        const check = document.createElement("div");
+        check.className = "card";
+        check.innerHTML = `<p><strong>Check:</strong> ${lec.check.prompt}</p>`;
+        const choices = document.createElement("div");
+        lec.check.choices.forEach((c, i) => {
+          const b = document.createElement("button");
+          b.className = "choice";
+          b.textContent = c;
+          b.onclick = () => {
+            choices.querySelectorAll("button").forEach(btn => btn.disabled = true);
+            if (i === lec.check.answer) b.classList.add("right");
+            else b.classList.add("wrong");
+            const why = document.createElement("p");
+            why.textContent = lec.check.why;
+            check.appendChild(why);
+            if (!progress.done.includes(lec.id)) {
+              progress.done.push(lec.id);
+              save();
+            }
+          };
+          choices.appendChild(b);
+        });
+        check.appendChild(choices);
+        el.appendChild(check);
+        const back = document.createElement("button");
+        back.textContent = "Back to week";
+        back.onclick = () => renderWeek(weekNum);
+        el.appendChild(back);
+        show("lecture");
+      }
+
+      function renderQuiz(weekNum) {
+        const week = course.weeks.find(w => w.number === weekNum);
+        const el = document.getElementById("quiz");
+        el.replaceChildren();
+        let index = 0;
+        let correct = 0;
+        let picked = null;
+
+        function draw() {
+          el.replaceChildren();
+          if (index >= week.quiz.length) {
+            const passed = correct >= week.pass;
+            progress.scores[week.number] = correct;
+            save();
+            el.innerHTML = `<p class="kicker">Quiz result</p><h2>${correct} of ${week.quiz.length}</h2><p>${passed ? "Passed." : "Not yet. You can retake it."}</p>`;
+            const back = document.createElement("button");
+            back.className = "primary";
+            back.textContent = "Back to week";
+            back.onclick = () => renderWeek(weekNum);
+            el.appendChild(back);
+            return;
+          }
+          const q = week.quiz[index];
+          el.innerHTML = `<p class="kicker">Question ${index + 1} of ${week.quiz.length}</p><h2>${q.prompt}</h2>`;
+          const choices = document.createElement("div");
+          q.choices.forEach((c, i) => {
+            const b = document.createElement("button");
+            b.className = "choice";
+            b.textContent = c;
+            b.onclick = () => {
+              if (picked !== null) return;
+              picked = i;
+              if (i === q.answer) correct++;
+              choices.querySelectorAll("button").forEach(btn => btn.disabled = true);
+              if (i === q.answer) b.classList.add("right");
+              else {
+                b.classList.add("wrong");
+                choices.children[q.answer].classList.add("right");
+              }
+              const why = document.createElement("p");
+              why.textContent = q.why;
+              el.appendChild(why);
+              const next = document.createElement("button");
+              next.className = "primary";
+              next.textContent = index + 1 === week.quiz.length ? "See result" : "Next";
+              next.onclick = () => { index++; picked = null; draw(); };
+              el.appendChild(next);
+            };
+            choices.appendChild(b);
+          });
+          el.appendChild(choices);
+        }
+        draw();
+        show("quiz");
+      }
+
+      fetch("course.json")
+        .then(r => r.json())
+        .then(data => {
+          course = data;
+          renderHome();
+        })
+        .catch(() => {
+          document.getElementById("title").textContent = "Could not load course";
+        });
+    </script>
+  </body>
+</html>
