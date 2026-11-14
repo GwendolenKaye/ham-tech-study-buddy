@@ -26,7 +26,7 @@ export type Week = {
 
 export const COURSE = {
   title: "Ham Radio Technician: From Zero to the Exam",
-  subtitle: "Six weeks. About two hours a week. No Morse. 26 of 35 is a pass.",
+  subtitle: "Six weeks. About two hours a week. No Morse. Updated for the 2026–2030 pool. 26 of 35 is a pass.",
 };
 
 function fromLesson(id: string): Lecture {
@@ -50,7 +50,7 @@ const examDay: Lecture = {
   points: [
     "35 multiple-choice questions. You need 26 right. You may miss 9.",
     "Bring a photo ID and the fee the session lists. A pencil is usually provided. Calculators are often allowed if they have no stored text.",
-    "You find out if you passed before you leave. The FCC call sign usually shows in the database within a few days. You wait for that before you transmit.",
+    "You find out if you passed before you leave. The FCC emails you a link to download the license grant. The call sign appears in the FCC database within a few days. You wait for that before you transmit.",
     "Sessions are run by local clubs. Search “ARRL exam session” plus your city when you are ready. You do not need to book one in week 1.",
   ],
   check: {
